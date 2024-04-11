@@ -10,7 +10,7 @@ public class BuildGrid : MonoBehaviour
     public float cellHeight;
     public List<Room> rooms = new List<Room>();
     public Dictionary<Vector2Int, GameObject> roomSugggestions = new Dictionary<Vector2Int, GameObject>();
-    public GameObject emptyRoom;
+    public GameObject[] roomPrefabs;
     public GameObject roomSuggestionPrefab;
 
     private void Awake()
@@ -54,7 +54,7 @@ public class BuildGrid : MonoBehaviour
         //    Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //    TryBuildRoom(new Vector2(clickPos.x, clickPos.y), true);
         //}
-        //else if (Input.GetKey(KeyCode.Space))
+        //if (Input.GetKey(KeyCode.Space))
         //{
         //    AddRandRoom();
         //}
@@ -92,10 +92,10 @@ public class BuildGrid : MonoBehaviour
 
         if (hasNearbyRoom)
         {
-            CreateRoom(roomCoords);
+            CreateRoom(roomCoords, verticalRoom ? 1 : 0);
             if (verticalRoom)
             {
-                CreateRoom(roomCoords + Vector2Int.down);
+                CreateRoom(roomCoords + Vector2Int.down, 2);
             }
         }
         else
@@ -103,10 +103,10 @@ public class BuildGrid : MonoBehaviour
             Debug.Log("No room nearby");
         }
     }
-    public void CreateRoom(Vector2Int roomCoords)
+    public void CreateRoom(Vector2Int roomCoords, int roomType = 0) //RoomType: 0 - empty, 1 - stT, 2 - stB
     {
         Vector2 roomPos = new Vector2(roomCoords.x * cellWidth, roomCoords.y * cellHeight);
-        GameObject createdRoom = Instantiate(emptyRoom, roomPos, Quaternion.identity);
+        GameObject createdRoom = Instantiate(roomPrefabs[roomType], roomPos, Quaternion.identity);
         Room room = createdRoom.GetComponent<Room>();
         room.InitiateRoom(roomCoords);
         rooms.Add(room);

@@ -25,11 +25,11 @@ namespace MainSceen
 
         private void Move()
         {
-            if (Input.GetMouseButtonDown(2))
+            if (Input.GetMouseButtonDown(1))
             {
                 _mousePositionDelta = Input.mousePosition;
             }
-            if (Input.GetMouseButton(2))
+            if (Input.GetMouseButton(1))
             {
                 Debug.Log(GetSensitivityMultiply());
                 Vector2 newMousePos = Input.mousePosition;
