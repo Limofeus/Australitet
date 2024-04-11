@@ -114,11 +114,16 @@ public class BuildGrid : MonoBehaviour
     private void TryAddRoomSuggestion(Vector2Int suggestionCoords)
     {
         bool placeOccupied = false;
+        bool downOccupied = false;
         foreach (Room room in rooms)
         {
             if(room.roomCoords == suggestionCoords)
             {
                 placeOccupied = true;
+            }
+            if(room.roomCoords + Vector2Int.up == suggestionCoords)
+            {
+                downOccupied = true;
             }
         }
         if (roomSugggestions.ContainsKey(suggestionCoords))
@@ -126,7 +131,9 @@ public class BuildGrid : MonoBehaviour
         if (!placeOccupied)
         {
             Vector2 suggestionPos = new Vector2(suggestionCoords.x * cellWidth, suggestionCoords.y * cellHeight);
-            roomSugggestions.Add(suggestionCoords, Instantiate(roomSuggestionPrefab, suggestionPos, Quaternion.identity));
+            GameObject roomSuggest = Instantiate(roomSuggestionPrefab, suggestionPos, Quaternion.identity);
+            roomSugggestions.Add(suggestionCoords, roomSuggest);
+            roomSuggest.GetComponent<RoomSuggestion>().Init(!downOccupied);
         }
     }
 }
