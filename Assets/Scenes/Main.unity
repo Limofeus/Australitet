@@ -321,7 +321,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellWidth: 8
   cellHeight: 5
+<<<<<<< HEAD
   testPrefab: {fileID: 3963841545538523388, guid: b44a436d08b6c1340865cbeac1f2def9, type: 3}
+=======
+  rooms: []
+  testPrefab: {fileID: 3963841545538523388, guid: ec1be7dd36496aa46a7968738f20052c, type: 3}
+>>>>>>> master
   roomSuggestionPrefab: {fileID: 3963841545538523388, guid: f31e7bf53af63164e80ab48a53b40719, type: 3}
 --- !u!1 &1900802581
 GameObject:
@@ -452,7 +457,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 30
   m_Depth: -1
   m_CullingMask:
