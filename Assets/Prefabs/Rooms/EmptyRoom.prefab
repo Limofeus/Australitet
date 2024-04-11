@@ -168,6 +168,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1093913779213874089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5947518981550397569}
+  m_Layer: 0
+  m_Name: RoomTypeSelectPanelAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5947518981550397569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093913779213874089}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5300031231952315413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3471981031818969044
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300031231952315413}
-  - component: {fileID: -4251043215126455751}
+  - component: {fileID: 478638686776203286}
   m_Layer: 0
   m_Name: EmptyRoom
   m_TagString: Untagged
@@ -375,9 +406,11 @@ Transform:
   - {fileID: 1311262973926726544}
   - {fileID: 2444569061091784889}
   - {fileID: 5488831359971005858}
+  - {fileID: 6274436611856675832}
+  - {fileID: 5947518981550397569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4251043215126455751
+--- !u!114 &478638686776203286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -386,10 +419,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3963841545538523388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705a36f5c7717e64d8f939a867016a94, type: 3}
+  m_Script: {fileID: 11500000, guid: 1269ee71fb150864f8373ced7eabec2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
+  roomTypeSelectAnchor: {fileID: 6274436611856675832}
+  roomTypeSelectRoomAnchor: {fileID: 5947518981550397569}
+  roomTypeSelectButtonPrefab: {fileID: 4311889346375552910, guid: f64999a27afa3fd4ba029342b08be2aa, type: 3}
+  roomTypeSelectPanelPrefab: {fileID: 6891552692624258770, guid: 47ad95b2b456ce04992022c2923dd478, type: 3}
+  roomPrefabs:
+  - {fileID: 3963841545538523388, guid: b44a436d08b6c1340865cbeac1f2def9, type: 3}
+  - {fileID: 3963841545538523388, guid: 613988a1af56f4947b1c10e26a0e2b42, type: 3}
 --- !u!1 &6309080580085077839
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +598,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6852692916750202887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6274436611856675832}
+  m_Layer: 0
+  m_Name: RoomTypeSelectAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6274436611856675832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852692916750202887}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5300031231952315413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6940026466889363291
 GameObject:
   m_ObjectHideFlags: 0

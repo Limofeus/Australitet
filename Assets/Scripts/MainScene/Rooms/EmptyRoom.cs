@@ -37,6 +37,7 @@ public class EmptyRoom : Room
         PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectRoomAnchor);
         GameObject newRoom = Instantiate(roomPrefabs[roomId], transform.position, Quaternion.identity);
         Room roomComp = newRoom.GetComponent<Room>();
+        roomComp.roomCoords = roomCoords;
         BuildGrid.Singleton.rooms[BuildGrid.Singleton.rooms.IndexOf(this)] = roomComp;
         Destroy(gameObject);
     }
