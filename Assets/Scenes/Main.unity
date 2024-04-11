@@ -321,12 +321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellWidth: 8
   cellHeight: 5
-<<<<<<< HEAD
-  testPrefab: {fileID: 3963841545538523388, guid: b44a436d08b6c1340865cbeac1f2def9, type: 3}
-=======
   rooms: []
-  testPrefab: {fileID: 3963841545538523388, guid: ec1be7dd36496aa46a7968738f20052c, type: 3}
->>>>>>> master
+  testPrefab: {fileID: 3963841545538523388, guid: b44a436d08b6c1340865cbeac1f2def9, type: 3}
   roomSuggestionPrefab: {fileID: 3963841545538523388, guid: f31e7bf53af63164e80ab48a53b40719, type: 3}
 --- !u!1 &1900802581
 GameObject:
@@ -407,6 +403,7 @@ GameObject:
   - component: {fileID: 2147135808}
   - component: {fileID: 2147135807}
   - component: {fileID: 2147135806}
+  - component: {fileID: 2147135810}
   - component: {fileID: 2147135809}
   m_Layer: 0
   m_Name: Main Camera
@@ -533,6 +530,21 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &2147135810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147135805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dfe9e7f5b241f47a18332471aedc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minPositionZ: -30
+  _maxPositionZ: -10
+  _scrollSpeed: 0.08
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
