@@ -7,31 +7,40 @@ public class RoomSuggestion : MonoBehaviour
     public GameObject buildRoomDownPanel;
     public GameObject buildRoomPanel;
     public Transform panelTrackTransform;
-    public void Init(bool bottomAvailable)
+    public Vector2Int coords;
+    public BuildGrid buildGrid;
+    public void Init(bool bottomAvailable, Vector2Int sugCoords, BuildGrid curBuildGrid)
     {
-        if (bottomAvailable)
-        {
-            PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)PanelManager.Singleton.CreateUiPanel(buildRoomDownPanel).transform);
-        }
-        else
-        {
-            PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)PanelManager.Singleton.CreateUiPanel(buildRoomPanel).transform);
-        }
+        CreatePanel(bottomAvailable);
+        coords = sugCoords;
+        buildGrid = curBuildGrid;
     }
     public void UpdateSuggestion(bool bottomAvailable)
     {
         PanelManager.Singleton.RemoveTrackingPair(panelTrackTransform);
+        CreatePanel(bottomAvailable);
+    }
+    private void CreatePanel(bool bottomAvailable)
+    {
+        GameObject uiPanel;
         if (bottomAvailable)
         {
-            PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)PanelManager.Singleton.CreateUiPanel(buildRoomDownPanel).transform);
+            uiPanel = PanelManager.Singleton.CreateUiPanel(buildRoomDownPanel);
         }
         else
         {
-            PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)PanelManager.Singleton.CreateUiPanel(buildRoomPanel).transform);
+            uiPanel = PanelManager.Singleton.CreateUiPanel(buildRoomPanel);
         }
+        uiPanel.GetComponent<BuildSuggestionPanel>().suggestionOject = this;
+        PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)uiPanel.transform);
     }
     private void OnDestroy()
     {
         PanelManager.Singleton.RemoveTrackingPair(panelTrackTransform);
     }
+    public void BuildRoom(bool isVertical)
+    {
+        buildGrid.TryBuildRoom(coords, isVertical);
+    }
+
 }

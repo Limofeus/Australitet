@@ -39,25 +39,28 @@ public class BuildGrid : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            TryBuildRoom(new Vector2(clickPos.x, clickPos.y));
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            TryBuildRoom(new Vector2(clickPos.x, clickPos.y), true);
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    TryBuildRoom(new Vector2(clickPos.x, clickPos.y));
+        //}
+        //else if (Input.GetMouseButtonDown(1))
+        //{
+        //    Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    TryBuildRoom(new Vector2(clickPos.x, clickPos.y), true);
+        //}
         //else if (Input.GetKey(KeyCode.Space))
         //{
         //    AddRandRoom();
         //}
     }
-    private void TryBuildRoom(Vector2 buildPos, bool verticalRoom = false)
+    public void TryBuildRoom(Vector2 buildPos, bool verticalRoom = false)
     {
         Vector2Int roomCoords = new Vector2Int(Mathf.FloorToInt(buildPos.x / cellWidth), Mathf.FloorToInt(buildPos.y / cellHeight));
-
+        TryBuildRoom(roomCoords);
+    }
+    public void TryBuildRoom(Vector2Int roomCoords, bool verticalRoom = false)
+    {
         Debug.Log($"HorCoor: {roomCoords.x} | VerCoor: {roomCoords.y}");
 
         bool hasNearbyRoom = false;
@@ -99,7 +102,8 @@ public class BuildGrid : MonoBehaviour
     {
         Vector2 roomPos = new Vector2(roomCoords.x * cellWidth, roomCoords.y * cellHeight);
         GameObject createdRoom = Instantiate(testPrefab, roomPos, Quaternion.identity);
-        Room room = new Room(roomCoords, createdRoom);
+        Room room = createdRoom.GetComponent<Room>();
+        room.InitiateRoom(roomCoords);
         rooms.Add(room);
         GameObject suggestionToDestroy;
         if(roomSugggestions.TryGetValue(roomCoords, out suggestionToDestroy))
@@ -138,7 +142,7 @@ public class BuildGrid : MonoBehaviour
             Vector2 suggestionPos = new Vector2(suggestionCoords.x * cellWidth, suggestionCoords.y * cellHeight);
             GameObject roomSuggest = Instantiate(roomSuggestionPrefab, suggestionPos, Quaternion.identity);
             roomSugggestions.Add(suggestionCoords, roomSuggest);
-            roomSuggest.GetComponent<RoomSuggestion>().Init(!downOccupied);
+            roomSuggest.GetComponent<RoomSuggestion>().Init(!downOccupied, suggestionCoords, this);
         }
     }
 }
