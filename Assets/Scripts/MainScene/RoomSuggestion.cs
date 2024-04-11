@@ -18,7 +18,18 @@ public class RoomSuggestion : MonoBehaviour
             PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)PanelManager.Singleton.CreateUiPanel(buildRoomPanel).transform);
         }
     }
-
+    public void UpdateSuggestion(bool bottomAvailable)
+    {
+        PanelManager.Singleton.RemoveTrackingPair(panelTrackTransform);
+        if (bottomAvailable)
+        {
+            PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)PanelManager.Singleton.CreateUiPanel(buildRoomDownPanel).transform);
+        }
+        else
+        {
+            PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)PanelManager.Singleton.CreateUiPanel(buildRoomPanel).transform);
+        }
+    }
     private void OnDestroy()
     {
         PanelManager.Singleton.RemoveTrackingPair(panelTrackTransform);

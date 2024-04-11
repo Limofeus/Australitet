@@ -29,6 +29,7 @@ public class PanelManager : MonoBehaviour
     {
         worldTransforms.Add(worldTransform);
         uiTransforms.Add(uiTransform);
+        uiTransform.position = WorldToScreenSpace(worldTransform.position, Camera.main);
     }
     public void RemoveTrackingPair(Transform worldTransform)
     {

@@ -107,6 +107,11 @@ public class BuildGrid : MonoBehaviour
             Destroy(suggestionToDestroy);
             roomSugggestions.Remove(roomCoords);
         }
+        GameObject suggestionToUpdate;
+        if (roomSugggestions.TryGetValue(roomCoords + Vector2Int.up, out suggestionToUpdate))
+        {
+            suggestionToUpdate.GetComponent<RoomSuggestion>().UpdateSuggestion(false);
+        }
         TryAddRoomSuggestion(roomCoords + Vector2Int.right);
         TryAddRoomSuggestion(roomCoords + Vector2Int.left);
     }
