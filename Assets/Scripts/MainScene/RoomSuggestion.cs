@@ -42,5 +42,4 @@ public class RoomSuggestion : MonoBehaviour
     {
         buildGrid.TryBuildRoom(coords, isVertical);
     }
-
 }

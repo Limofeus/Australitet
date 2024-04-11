@@ -10,9 +10,9 @@ namespace MainSceen
         [SerializeField] private float _maxPositionZ;
         [SerializeField] private float _scrollSpeed;
         private Vector2 _mousePositionDelta;
-        private float _cameraSensitivity = 0.01f;
-        private Vector2 _mapSize = new Vector2(15f, 13f);
-        private float _currentZoom = 0;
+        public float _cameraSensitivity = 0.01f;
+        public Vector2 _mapSize = new Vector2(15f, 13f);
+        public static float _currentZoom = 0;
 
         private void Update()
         {
@@ -49,7 +49,7 @@ namespace MainSceen
         {
             _currentZoom += scrollDelta * _scrollSpeed;
             _currentZoom = Mathf.Clamp01(_currentZoom);
-            var zoom = _minPositionZ + (_maxPositionZ - _minPositionZ) * _currentZoom;
+            var zoom = Mathf.Lerp(_minPositionZ, _maxPositionZ, _currentZoom);
             transform.position = new Vector3(transform.position.x, transform.position.y, zoom);
         }
 
