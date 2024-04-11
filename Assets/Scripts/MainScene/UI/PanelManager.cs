@@ -38,7 +38,8 @@ public class PanelManager : MonoBehaviour
             if(worldTransform == worldTransforms[i])
             {
                 worldTransforms.RemoveAt(i);
-                Destroy(uiTransforms[i].gameObject);
+                if(uiTransforms[i] != null)
+                    Destroy(uiTransforms[i].gameObject);
                 uiTransforms.RemoveAt(i);
                 break;
             }

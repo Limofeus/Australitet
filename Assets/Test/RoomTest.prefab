@@ -82,7 +82,10 @@ MonoBehaviour:
   roomTypeSelectAnchor: {fileID: 4642426437668999890}
   roomTypeSelectRoomAnchor: {fileID: 5041680714596940203}
   roomTypeSelectButtonPrefab: {fileID: 4311889346375552910, guid: f64999a27afa3fd4ba029342b08be2aa, type: 3}
-  roomTypeSelectPanelPrefab: {fileID: 0}
+  roomTypeSelectPanelPrefab: {fileID: 6891552692624258770, guid: 47ad95b2b456ce04992022c2923dd478, type: 3}
+  roomPrefabs:
+  - {fileID: 3963841545538523388, guid: b44a436d08b6c1340865cbeac1f2def9, type: 3}
+  - {fileID: 3963841545538523388, guid: 725a0f2c0b4e23e45b1c602f6067d2cb, type: 3}
 --- !u!1 &4215147548417709151
 GameObject:
   m_ObjectHideFlags: 0
