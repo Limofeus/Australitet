@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room
+public class Room : MonoBehaviour
 {
     public Vector2Int roomCoords;
-    public GameObject roomVisual;
 
-    public void InitiateRoom(Vector2Int coords, GameObject roomObj)
+    public void InitiateRoom(Vector2Int coords)
     {
         roomCoords = coords;
-        roomVisual = roomObj;
     }
     public Room(){}
 
-    public Room(Vector2Int roomCoords, GameObject roomVisual)
+    public Room(Vector2Int roomCoords)
     {
         this.roomCoords = roomCoords;
-        this.roomVisual = roomVisual;
     }
 }
