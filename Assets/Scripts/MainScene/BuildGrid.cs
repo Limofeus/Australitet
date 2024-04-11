@@ -5,13 +5,18 @@ using UnityEngine;
 
 public class BuildGrid : MonoBehaviour
 {
+    public static BuildGrid Singleton;
     public float cellWidth;
     public float cellHeight;
     public List<Room> rooms = new List<Room>();
     public Dictionary<Vector2Int, GameObject> roomSugggestions = new Dictionary<Vector2Int, GameObject>();
-    public GameObject testPrefab;
+    public GameObject emptyRoom;
     public GameObject roomSuggestionPrefab;
 
+    private void Awake()
+    {
+        Singleton = this;
+    }
     private void Start()
     {
         CreateRoom(Vector2Int.zero);
@@ -101,7 +106,7 @@ public class BuildGrid : MonoBehaviour
     public void CreateRoom(Vector2Int roomCoords)
     {
         Vector2 roomPos = new Vector2(roomCoords.x * cellWidth, roomCoords.y * cellHeight);
-        GameObject createdRoom = Instantiate(testPrefab, roomPos, Quaternion.identity);
+        GameObject createdRoom = Instantiate(emptyRoom, roomPos, Quaternion.identity);
         Room room = createdRoom.GetComponent<Room>();
         room.InitiateRoom(roomCoords);
         rooms.Add(room);
