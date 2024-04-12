@@ -346,6 +346,8 @@ MonoBehaviour:
   roomPrefabs:
   - {fileID: 3963841545538523388, guid: b44a436d08b6c1340865cbeac1f2def9, type: 3}
   - {fileID: 3963841545538523388, guid: 613988a1af56f4947b1c10e26a0e2b42, type: 3}
+  - {fileID: 3963841545538523388, guid: 069a709c091e09d4294eb411dd7ea825, type: 3}
+  - {fileID: 3963841545538523388, guid: cc57d7d56309b9243971646eee9664df, type: 3}
 --- !u!1 &6563022526541472551
 GameObject:
   m_ObjectHideFlags: 0
