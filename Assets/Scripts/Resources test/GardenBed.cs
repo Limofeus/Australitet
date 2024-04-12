@@ -7,14 +7,9 @@ public class GardenBed : Room
     int Capacity = 50;
     int Resources = 10;
 
-    public override void OnTheEndOfDay()
+    protected override void RoomWork()
     {
-        if(IsActive) GardenWork();
-    }
-    
-    private void GardenWork()
-    {
-        Totalres.rawFood = AddRes(Totalres.rawFood, 5);
+        //Totalres.rawFood = AddRes(Totalres.rawFood, 5);
     }
     public int AddRes(int res, int num)
     {

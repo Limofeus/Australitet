@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101014743760638167}
   - component: {fileID: 8821225396045447697}
-  - component: {fileID: 7192669217101958059}
+  - component: {fileID: 1965081949389596397}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -251,7 +251,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &7192669217101958059
+--- !u!114 &1965081949389596397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,13 +260,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2339892973404488316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75e94a1003c18644b19e77407be9b65, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ef6827cc7f64d74fb0a3693cb9363c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 8821225396045447697}
-  _currentIntensity: 5
-  _speed: 1
-  _lightRange: 15
+  _speed: 0.7
+  _offset: 1
 --- !u!1 &2918094949310564791
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
+  IsActive: 0
 --- !u!1 &4452602521706504776
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7118243306645349713}
   - component: {fileID: 5053771453514095424}
-  - component: {fileID: 5544070232304604450}
+  - component: {fileID: 7844541925709176840}
   m_Layer: 0
   m_Name: Light 2D (1)
   m_TagString: Untagged
@@ -911,7 +911,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &5544070232304604450
+--- !u!114 &7844541925709176840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -920,13 +920,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7375967113386040420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75e94a1003c18644b19e77407be9b65, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ef6827cc7f64d74fb0a3693cb9363c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 5053771453514095424}
-  _currentIntensity: 5
-  _speed: 1
-  _lightRange: 15
+  _speed: 0.7
+  _offset: 1.1
 --- !u!1 &7567619911478578447
 GameObject:
   m_ObjectHideFlags: 0
