@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300031231952315413}
-  - component: {fileID: -4251043215126455751}
+  - component: {fileID: -606524385365870504}
   m_Layer: 0
   m_Name: Kitchen
   m_TagString: Untagged
@@ -649,7 +649,7 @@ Transform:
   - {fileID: 2101014743760638167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4251043215126455751
+--- !u!114 &-606524385365870504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,6 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
+  IsActive: 0
 --- !u!1 &6406872237923770588
 GameObject:
   m_ObjectHideFlags: 0
