@@ -11,7 +11,7 @@ public class EmptyRoom : Room
     private RoomTypeSelector roomTypeSelector;
     private RoomTypeSelectionPanel roomTypeSelectionPanel;
     public GameObject[] roomPrefabs;
-    void Start()
+    override public void OnRoomCreated()
     {
         GameObject typeSelectButtonInstance = PanelManager.Singleton.CreateUiPanel(roomTypeSelectButtonPrefab);
         GameObject roomTypeSelectPanelInstance = PanelManager.Singleton.CreateUiPanel(roomTypeSelectPanelPrefab);
