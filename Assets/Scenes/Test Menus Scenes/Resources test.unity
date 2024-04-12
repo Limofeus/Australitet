@@ -839,7 +839,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 676344710}
-        m_TargetAssemblyTypeName: Totalres, Assembly-CSharp
+        m_TargetAssemblyTypeName: Roomle, Assembly-CSharp
         m_MethodName: NewDay
         m_Mode: 1
         m_Arguments:
@@ -897,9 +897,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 676344705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f8a3b0e8d36d9458c7b441685fd196, type: 3}
+  m_Script: {fileID: 11500000, guid: 4596296f5d35e2f4fbfefc081f2302d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 74407003}
 --- !u!1 &943332741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,7 +1578,6 @@ GameObject:
   - component: {fileID: 1881326074}
   - component: {fileID: 1881326073}
   - component: {fileID: 1881326072}
-  - component: {fileID: 1881326076}
   m_Layer: 0
   m_Name: Facility
   m_TagString: Untagged
@@ -1671,19 +1671,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1881326076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881326070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4596296f5d35e2f4fbfefc081f2302d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _text: {fileID: 74407003}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
