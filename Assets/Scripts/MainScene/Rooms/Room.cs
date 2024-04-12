@@ -9,7 +9,10 @@ public class Room : MonoBehaviour
     public void InitiateRoom(Vector2Int coords)
     {
         roomCoords = coords;
+        OnRoomCreated();
     }
+    public virtual void OnRoomCreated(){ }
+    public virtual void OnRoomDestroyed() { }
     public Room(){}
 
     public Room(Vector2Int roomCoords)
