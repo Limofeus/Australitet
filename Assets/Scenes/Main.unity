@@ -538,6 +538,7 @@ MonoBehaviour:
   - {fileID: 3963841545538523388, guid: 725a0f2c0b4e23e45b1c602f6067d2cb, type: 3}
   - {fileID: 3963841545538523388, guid: 2aa6eb373c9a1174d86b236b3e956123, type: 3}
   - {fileID: 3963841545538523388, guid: 1aad92457cb7ebc48ba9dd996ab6a64a, type: 3}
+  - {fileID: 3963841545538523388, guid: 2c86800f2d1faed4a9412de2f15765b7, type: 3}
   roomSuggestionPrefab: {fileID: 3963841545538523388, guid: f31e7bf53af63164e80ab48a53b40719, type: 3}
 --- !u!1 &1234636304
 GameObject:
@@ -5882,6 +5883,7 @@ MonoBehaviour:
   _scrollSpeed: 0.1
   _cameraSensitivity: 0.1
   _mapSize: {x: 80, y: 50}
+  _mapOffsVert: -20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

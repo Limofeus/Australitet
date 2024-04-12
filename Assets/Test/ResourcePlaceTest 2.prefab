@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceName: "\u0416\u041E\u041B\u0422!!!"
+  resourceColor: {r: 1, g: 0.98647946, b: 0, a: 1}
   minGenerationDepth: 8
   maxGenerationDepth: 13
 --- !u!1 &1570904667336738566

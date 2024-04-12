@@ -255,9 +255,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3932022834514715823}
-        m_TargetAssemblyTypeName: BuildSuggestionPanel, Assembly-CSharp
-        m_MethodName: BuildNormal
+      - m_Target: {fileID: 4627547353490083828}
+        m_TargetAssemblyTypeName: CreateResourceRoomButton, Assembly-CSharp
+        m_MethodName: BuildResourceRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -278,9 +278,9 @@ GameObject:
   - component: {fileID: 1118571671943904265}
   - component: {fileID: 8706167924163578135}
   - component: {fileID: 3041691884699522140}
-  - component: {fileID: 3932022834514715823}
+  - component: {fileID: 4627547353490083828}
   m_Layer: 5
-  m_Name: Resource
+  m_Name: CreateResourceRoomPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3932022834514715823
+--- !u!114 &4627547353490083828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5448560970132318236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c367c79ee259b64c9c3da011630b83d, type: 3}
+  m_Script: {fileID: 11500000, guid: 374e59ef5b763bf4d99727bd6f2b1362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   suggestionOject: {fileID: 0}

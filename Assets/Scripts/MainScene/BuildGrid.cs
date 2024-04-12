@@ -104,7 +104,7 @@ public class BuildGrid : MonoBehaviour
             Debug.Log("No room nearby");
         }
     }
-    public void CreateRoom(Vector2Int roomCoords, int roomType = 0) //RoomType: 0 - empty, 1 - stT, 2 - stB
+    public void CreateRoom(Vector2Int roomCoords, int roomType = 0) //RoomType: 0 - empty, 1 - stT, 2 - stB, 3 - resourceRoom
     {
         Vector2 roomPos = new Vector2(roomCoords.x * cellWidth, roomCoords.y * cellHeight);
         GameObject createdRoom = Instantiate(roomPrefabs[roomType], roomPos, Quaternion.identity);

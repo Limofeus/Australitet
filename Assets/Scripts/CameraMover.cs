@@ -12,6 +12,7 @@ namespace MainSceen
         private Vector2 _mousePositionDelta;
         public float _cameraSensitivity = 0.01f;
         public Vector2 _mapSize = new Vector2(15f, 13f);
+        public float _mapOffsVert = 8f;
         public static float _currentZoom = 0;
 
         private void Update()
@@ -38,7 +39,7 @@ namespace MainSceen
                     * _cameraSensitivity * GetSensitivityMultiply();
                 if (Mathf.Abs(newPosition.x) > _mapSize.x)
                     newPosition.x = transform.position.x;
-                if (Mathf.Abs(newPosition.y) > _mapSize.y)
+                if (Mathf.Abs(newPosition.y - _mapOffsVert) > _mapSize.y)
                     newPosition.y = transform.position.y;
                 _mousePositionDelta = newMousePos;
                 transform.position = newPosition;

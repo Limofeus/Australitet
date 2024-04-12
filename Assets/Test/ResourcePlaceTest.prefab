@@ -213,5 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceName: "\u0422\u0420\u0418\u0423\u0413\u041B"
+  resourceColor: {r: 1, g: 0, b: 0, a: 1}
   minGenerationDepth: 2
   maxGenerationDepth: 4

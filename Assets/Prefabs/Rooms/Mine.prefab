@@ -343,7 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300031231952315413}
-  - component: {fileID: -606524385365870504}
+  - component: {fileID: 4881283635374602790}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -377,7 +377,7 @@ Transform:
   - {fileID: 2101014743760638167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-606524385365870504
+--- !u!114 &4881283635374602790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -386,11 +386,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3963841545538523388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705a36f5c7717e64d8f939a867016a94, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b13f716804855c4db0f146284a330a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
   IsActive: 0
+  minedResourceName: 
+  resourceLight: {fileID: 8821225396045447697}
 --- !u!1 &5551940820472512796
 GameObject:
   m_ObjectHideFlags: 0

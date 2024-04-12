@@ -14,11 +14,11 @@ public class RoomSuggestion : MonoBehaviour
     public void Init(bool bottomAvailable, Vector2Int sugCoords, BuildGrid curBuildGrid, ResourcePlace resourcePlace = null)
     {
         linkedResourcePlace = resourcePlace;
+        coords = sugCoords;
+        buildGrid = curBuildGrid;
         if(linkedResourcePlace == null)
         {
             CreatePanel(bottomAvailable);
-            coords = sugCoords;
-            buildGrid = curBuildGrid;
         }
         else
         {
@@ -50,7 +50,7 @@ public class RoomSuggestion : MonoBehaviour
     private void CreateResourceRoomPanel()
     {
         GameObject uiPanel = PanelManager.Singleton.CreateUiPanel(buildResourceRoomPanel);
-        uiPanel.GetComponent<BuildSuggestionPanel>().suggestionOject = this;
+        uiPanel.GetComponent<CreateResourceRoomButton>().suggestionOject = this;
         PanelManager.Singleton.AddTrackingPair(panelTrackTransform, (RectTransform)uiPanel.transform);
     }
     private void OnDestroy()
@@ -60,5 +60,9 @@ public class RoomSuggestion : MonoBehaviour
     public void BuildRoom(bool isVertical)
     {
         buildGrid.TryBuildRoom(coords, isVertical);
+    }
+    public void BuildResourceRoom()
+    {
+        buildGrid.CreateRoom(coords, 3);
     }
 }
