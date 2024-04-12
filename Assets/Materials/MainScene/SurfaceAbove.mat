@@ -101,7 +101,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_c5ea33d3a8cb4a58ab08456be18e566c_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: cc5261cd793619b4fbcf123ad5feb830, type: 3}
+        m_Texture: {fileID: 2800000, guid: 04f3388e26b50aa44b1152bd28d23b8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_e850a1b908e741e9837eb4e0c46e2746_Texture_1_Texture2D:
@@ -178,7 +178,7 @@ Material:
     - _Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _GroundTile: {r: 10, g: 4, b: 0, a: 0}
+    - _GroundTile: {r: 20, g: 5, b: 0, a: 0}
     - _L1MooveSpeed: {r: 0.2, g: 0.1, b: 0, a: 0}
     - _L2MooveSpeed: {r: 0.3, g: 0.8, b: 0, a: 0}
     - _L3MooveSpeed: {r: -0.1, g: 0.05, b: 0, a: 0}
