@@ -10,6 +10,7 @@ public class BuildGrid : MonoBehaviour
     public float cellHeight;
     public List<Room> rooms = new List<Room>();
     public Dictionary<Vector2Int, GameObject> roomSugggestions = new Dictionary<Vector2Int, GameObject>();
+    public Dictionary<Vector2Int, ResourcePlace> resourcePlaces = new Dictionary<Vector2Int, ResourcePlace>();
     public GameObject[] roomPrefabs;
     public GameObject roomSuggestionPrefab;
 
@@ -142,12 +143,23 @@ public class BuildGrid : MonoBehaviour
         }
         if (roomSugggestions.ContainsKey(suggestionCoords))
             placeOccupied = true;
+        if (resourcePlaces.ContainsKey(suggestionCoords + Vector2Int.down))
+            downOccupied = true;
+
         if (!placeOccupied)
         {
+            ResourcePlace resourcePlace;
             Vector2 suggestionPos = new Vector2(suggestionCoords.x * cellWidth, suggestionCoords.y * cellHeight);
             GameObject roomSuggest = Instantiate(roomSuggestionPrefab, suggestionPos, Quaternion.identity);
             roomSugggestions.Add(suggestionCoords, roomSuggest);
-            roomSuggest.GetComponent<RoomSuggestion>().Init(!downOccupied, suggestionCoords, this);
+            if(resourcePlaces.TryGetValue(suggestionCoords, out resourcePlace))
+            {
+                roomSuggest.GetComponent<RoomSuggestion>().Init(!downOccupied, suggestionCoords, this, resourcePlace);
+            }
+            else
+            {
+                roomSuggest.GetComponent<RoomSuggestion>().Init(!downOccupied, suggestionCoords, this);
+            }
         }
     }
 }
