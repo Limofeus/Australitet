@@ -115,6 +115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3227124511939678116}
+  - {fileID: 8277201180243372660}
   - {fileID: 8263421997366250223}
   - {fileID: 647253640995928592}
   m_Father: {fileID: 0}
@@ -265,7 +266,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ab1421e2d797b948ad690105d7800e3, type: 2}
+      objectReference: {fileID: 2100000, guid: e8cfba5dde765614aacc3ebe75186659, type: 2}
     - target: {fileID: 919132149155446097, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
       propertyPath: m_Name
       value: RoomWithoutFloor
@@ -279,4 +280,86 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
   m_PrefabInstance: {fileID: 3117535307371882575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8454452644879322527
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5300031231952315413}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.48
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ab1421e2d797b948ad690105d7800e3, type: 2}
+    - target: {fileID: 919132149155446097, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+      propertyPath: m_Name
+      value: RoomWithoutFloor (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+--- !u!4 &8277201180243372660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16f4c779e8db2bc4d957e3358fd6416e, type: 3}
+  m_PrefabInstance: {fileID: 8454452644879322527}
   m_PrefabAsset: {fileID: 0}
