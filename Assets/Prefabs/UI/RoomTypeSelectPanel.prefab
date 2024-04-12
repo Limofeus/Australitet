@@ -1105,7 +1105,7 @@ MonoBehaviour:
   panelOpened: 0
   lerpPower: 20
   room: {fileID: 0}
-  zoomFacMin: 0.5
+  zoomFacMin: 0.65
   zoomFacMax: 1
 --- !u!1 &7498046527335370789
 GameObject:
