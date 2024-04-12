@@ -8,8 +8,8 @@ public class Research : Room
     public Transform panelPivot;
     public override void OnRoomCreated()
     {
-        TestRoomPanelUI testRoomPanelUI = CreatePanel<TestRoomPanelUI>(panelPivot, panelPrefab);
-        testRoomPanelUI.thisPanelsResearchRoom = this;
+        //RoomPanelUI testRoomPanelUI = CreatePanel<RoomPanelUI>(panelPivot, panelPrefab);
+        //testRoomPanelUI.thisPanelsResearchRoom = this;
     }
 
     public void OnButtonTest()
