@@ -6,7 +6,7 @@ public class Hospital : Room
 {
     int Capacity = 10;
 
-    public override void OnTheEndOfDay()
+    protected override void RoomWork()
     {
         //if(IsActive) HospitalWork();
     }

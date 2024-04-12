@@ -6,7 +6,6 @@ namespace VisualEffects
     public class FireEffect : MonoBehaviour
     {
         [SerializeField] private Light2D _light;
-        [SerializeField] private float _currentIntensity = 5;
         [SerializeField] private float _speed = 1;
         [SerializeField] private float _lightRange = 1;
 

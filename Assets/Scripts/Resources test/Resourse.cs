@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class People : Room
+public class Resourse
 {
-
+    public int maxValue;
+    public int currentValue;
 }
