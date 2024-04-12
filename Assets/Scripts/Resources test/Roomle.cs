@@ -21,9 +21,9 @@ public class Roomle : MonoBehaviour
         //_text.text += "\nMaterials: " + _mine.ResourcesAmount;
         _text.text += "\nRaw food: " + Totalres.rawFood.currentValue;
         _text.text += "\nCooked food: " + Totalres.food.currentValue;
-        _text.text += "\nPeople living: " + Totalres.people.maxValue;
-        _text.text += "\nSicked: " + Totalres.sickPeople.currentValue;
-        _text.text += "\nHungered: " + Totalres.people.maxValue * Totalres.hungryPeopleFraction;
+        _text.text += "\nPeople living: " + Totalres.people.max;
+        //_text.text += "\nSicked: " + Totalres.sickPeople.currentValue;
+        //_text.text += "\nHungered: " + Totalres.people.maxValue * Totalres.hungryPeopleFraction;
     }
     public void NewDay()
     {
