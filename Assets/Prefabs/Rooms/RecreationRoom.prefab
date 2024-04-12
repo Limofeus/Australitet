@@ -502,6 +502,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3823760318631062068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5473797926218146754}
+  m_Layer: 0
+  m_Name: PanelPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5473797926218146754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823760318631062068}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5300031231952315413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3963841545538523388
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300031231952315413}
-  - component: {fileID: -4251043215126455751}
+  - component: {fileID: 362270047991573188}
   m_Layer: 0
   m_Name: RecreationRoom
   m_TagString: Untagged
@@ -547,9 +578,10 @@ Transform:
   - {fileID: 1207652513988817801}
   - {fileID: 2004330020089603986}
   - {fileID: 1883481142475778773}
+  - {fileID: 5473797926218146754}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4251043215126455751
+--- !u!114 &362270047991573188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,10 +590,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3963841545538523388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705a36f5c7717e64d8f939a867016a94, type: 3}
+  m_Script: {fileID: 11500000, guid: cf53c5578acb5d74aab47ee965a8acc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
+  IsActive: 0
+  panelPrefab: {fileID: 2431288705876789555, guid: 49297bfc1bedc5e45853eefc6e75e0eb, type: 3}
+  panelPivot: {fileID: 5473797926218146754}
 --- !u!1 &4455157183770399469
 GameObject:
   m_ObjectHideFlags: 0

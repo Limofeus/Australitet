@@ -14,7 +14,7 @@ public class Room : MonoBehaviour
 
     public virtual void OnRoomCreated() { }
     
-    public virtual void OnRoomDestroyed() { }
+    public virtual void OnRoomDestroyed() {}
 
     public void OnTheEndOfDay() 
     {
@@ -24,6 +24,13 @@ public class Room : MonoBehaviour
 
     protected virtual void RoomWork() { }
     
+    public T CreatePanel<T>(Transform trackingPosition, GameObject panelPrefab)
+    {
+        GameObject createdPanel = PanelManager.Singleton.CreateUiPanel(panelPrefab);
+        PanelManager.Singleton.AddTrackingPair(trackingPosition, (RectTransform)createdPanel.transform);
+        return createdPanel.GetComponent<T>();
+    }
+
     public Room(){}
 
     public Room(Vector2Int roomCoords)

@@ -15,13 +15,17 @@ public class EmptyRoom : Room
     public GameObject[] roomPrefabs;
     override public void OnRoomCreated()
     {
+        /*
         GameObject typeSelectButtonInstance = PanelManager.Singleton.CreateUiPanel(roomTypeSelectButtonPrefab);
         GameObject roomTypeSelectPanelInstance = PanelManager.Singleton.CreateUiPanel(roomTypeSelectPanelPrefab);
         PanelManager.Singleton.AddTrackingPair(roomTypeSelectAnchor, (RectTransform)typeSelectButtonInstance.transform);
         PanelManager.Singleton.AddTrackingPair(roomTypeSelectRoomAnchor, (RectTransform)roomTypeSelectPanelInstance.transform);
         roomTypeSelector = typeSelectButtonInstance.GetComponent<RoomTypeSelector>();
-        roomTypeSelector.emptyRoom = this;
         roomTypeSelectionPanel = roomTypeSelectPanelInstance.GetComponent<RoomTypeSelectionPanel>();
+        */
+        roomTypeSelector = CreatePanel<RoomTypeSelector>(roomTypeSelectAnchor, roomTypeSelectButtonPrefab);
+        roomTypeSelectionPanel = CreatePanel<RoomTypeSelectionPanel>(roomTypeSelectRoomAnchor, roomTypeSelectPanelPrefab);
+        roomTypeSelector.emptyRoom = this;
         roomTypeSelectionPanel.room = this;
     }
     public void ShowTypeSelector()
