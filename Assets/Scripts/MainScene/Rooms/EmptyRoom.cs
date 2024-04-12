@@ -6,8 +6,10 @@ public class EmptyRoom : Room
 {
     public Transform roomTypeSelectAnchor;
     public Transform roomTypeSelectRoomAnchor;
+
     public GameObject roomTypeSelectButtonPrefab;
     public GameObject roomTypeSelectPanelPrefab;
+
     private RoomTypeSelector roomTypeSelector;
     private RoomTypeSelectionPanel roomTypeSelectionPanel;
     public GameObject[] roomPrefabs;
