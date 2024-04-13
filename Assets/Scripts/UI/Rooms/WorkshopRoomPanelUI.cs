@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LabRoomPanelUI : RoomPanelUI
+public class WorkshopRoomPanelUI : RoomPanelUI
 {
-    public Research room;
+    public Worksop room;
 
     public override void ActivateResearch()
     {

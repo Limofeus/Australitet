@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Research : Room
+public class Worksop : Room
 {
-    public GameObject panelPrefab;
-    public Transform panelPivot;
     public override void OnRoomCreated()
     {
         //RoomPanelUI testRoomPanelUI = CreatePanel<RoomPanelUI>(panelPivot, panelPrefab);
