@@ -5821,11 +5821,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6c1a884119fd64892a141380354e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSeq: 00000000000000000000000001000000
+  eventCounter: -1
   eventIcons:
   - {fileID: 21300000, guid: fdc8d9a5d03358440bedab5593e94f3d, type: 3}
   - {fileID: 21300000, guid: ece4e178447c12a4a9a5e9e6b4cf34a8, type: 3}
   - {fileID: 21300000, guid: 665e3678601273f45a7f9a1d9a09f8b2, type: 3}
+  testCastEvent: 0
   testCastBigEvent: 0
+  testCastSmallEvent: 0
+  listEventDebug: 0
 --- !u!1 &2130852355
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,6 +5946,6 @@ SceneRoots:
   - {fileID: 855039826}
   - {fileID: 443074634}
   - {fileID: 1019686207}
+  - {fileID: 2001916065}
   - {fileID: 543234811}
   - {fileID: 1929975745}
-  - {fileID: 2001916065}

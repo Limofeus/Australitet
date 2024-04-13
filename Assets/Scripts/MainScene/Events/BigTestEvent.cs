@@ -29,12 +29,6 @@ public class BigTestEvent : BigEvent
     {
         return true;
     }
-
-    public override void OnDayEnd()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void OnDayStart()
     {
         eventName = "Опции";
