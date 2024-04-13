@@ -26,6 +26,7 @@ public class PlayerParams : MonoBehaviour
     private void Awake()
     {
         Singleton = this;
+        Totalres.people.Timeout += 0;
     }
 
     private void Start()
