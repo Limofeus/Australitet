@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RecreationRoomPanelUI : RoomPanelUI
 {
-    public Worksop room;
+    public Recreation room;
     [SerializeField] private Slider _curePeople;
 
     private void OnEnable()
