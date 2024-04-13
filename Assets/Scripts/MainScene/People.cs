@@ -4,15 +4,11 @@ public class People
 {
     private int _hungry;
     private int _sick;
-    private int _worked;
+    private int _available;
+    private int _happy;
 
     public int max;
 
-    public int Worked 
-    { 
-        get { return _worked; }
-        set { _worked = Mathf.Clamp(value, 0, max); }
-    }
     public int Hungry
     {
         get { return _hungry; }
@@ -23,13 +19,24 @@ public class People
         get { return _sick; }
         set { _sick = Mathf.Clamp(value, 0, max); }
     }
+    public int Available
+    {
+        get { return _available; }
+        set { _available = Mathf.Clamp(value, 0, max); }
+    }    
+    
+    public int Happy
+    {
+        get { return _happy; }
+        set { _happy = Mathf.Clamp(value, 0, max); }
+    }
 
-    public int Available => max - _worked;
-
-    public People(int maxPeople, int hungryPeople, int sickPeople)
+    public People(int maxPeople, int hungryPeople, int sickPeople, int happy)
     {
         max = maxPeople;
         Hungry = hungryPeople;
         Sick = sickPeople;
+        Available = maxPeople;
+        Happy = happy;
     }
 }
