@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class WorkshopRoomPanelUI : RoomPanelUI
 {
-    public Worksop room;
+    public WorkshopRoom room;
 }
