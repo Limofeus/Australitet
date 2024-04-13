@@ -17,11 +17,12 @@ public class DontDestroy : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        instance.GetComponent<AudioSource>().mute = false;
+        if(!instance.GetComponent<AudioSource>().isPlaying)
+            instance.GetComponent<AudioSource>().Play();
     }
 
     public void MuteMusic()
     {
-        instance.GetComponent<AudioSource>().mute = true;
+        instance.GetComponent<AudioSource>().Stop();
     }
 }
