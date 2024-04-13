@@ -4,32 +4,56 @@ public static class Totalres
 {
     public static People people = new (50, 0, 0, 40);
 
-    public static Resourse food = new (100, 10);
-    public static Resourse rawFood = new (100, 10);
-    public static Resourse metal = new (100, 10);
+    public static Resourse food = new (100);
+    public static Resourse rawFood = new (110);
+    public static Resourse metal = new (120);
 
     public static int reviewedPeopleCount = 0;
-    public static int sickPeople => people.Sick;
-    public static int hungryPeople => people.Hungry;
 
     public static void OnTheEndOfDay()
     {
+        Eat();
+        Sick();
         KillHungryPeople();
         KillSickyPeople();
         people.ReturnTimeoutPeople();
+    }
+
+    private static void Eat()
+    {
+        var flaw = people.Max - food.CurrentValue;
+        if (flaw < 0)
+            flaw = 0;
+        food.CurrentValue -= people.Max;
+        people.Hungry += flaw;
+    }
+
+    private static void Sick()
+    {
+        var randomSmallValue = Random.Range(-5, 5);
+        if (randomSmallValue < 0)
+            randomSmallValue = 0;
+        var sickPeople = Random.Range(0, people.Sick) + randomSmallValue;
+        people.Sick += sickPeople;
     }
 
     private static void KillHungryPeople()
     {
         var deathCoefficient = Random.Range(3, 6) * 0.01f;
         if (GetHungryPeopleFraction() > 0.5f)
-            people.Max -= (int)(people.Max * deathCoefficient);
+        {
+            var deadPeople = (int)(people.Hungry * deathCoefficient);
+            people.Max -= deadPeople;
+            people.Hungry -= deadPeople;
+        }
     }
 
     private static void KillSickyPeople()
     {
         var deathCoefficient = Random.Range(0, 10) * 0.01f;
-        people.Max -= (int)(sickPeople * deathCoefficient);
+        var deadPeople = (int)(people.Sick * deathCoefficient);
+        people.Max -= deadPeople;
+        people.Sick -= deadPeople;
     }
 
     public static float GetSickyPeopleFraction()
@@ -39,16 +63,11 @@ public static class Totalres
             noInfoPeopleCount = 0;
 
         var errorFraction = (float)noInfoPeopleCount / people.Max * Random.Range(-1f,1f);
-        return Mathf.Clamp01(sickPeople / people.Max + errorFraction / 2);
+        return Mathf.Clamp01(people.Sick / people.Max + errorFraction / 2);
     }
 
     public static float GetHungryPeopleFraction()
     {
-        var hungryPeopleFraction = people.Max - food.CurrentValue;
-
-        if (hungryPeopleFraction < 0)
-            hungryPeopleFraction = 0;
-
-        return hungryPeopleFraction / people.Max;
+        return people.Hungry / people.Max;
     }
 }

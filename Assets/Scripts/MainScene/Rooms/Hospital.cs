@@ -16,7 +16,7 @@ public class Hospital : ActivatedRoom
 
     protected override void RoomWork()
     {
-        var curePeople = Mathf.Min(peopleInHospital, Totalres.sickPeople);
+        var curePeople = Mathf.Min(peopleInHospital, Totalres.people.Sick);
         Totalres.people.Sick -= curePeople;
         Totalres.reviewedPeopleCount = HospitalCapacity;
     }
