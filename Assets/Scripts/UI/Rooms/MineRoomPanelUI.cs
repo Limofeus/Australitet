@@ -4,10 +4,5 @@ using UnityEngine;
 
 public class MineRoomPanelUI : RoomPanelUI
 {
-    public Mine room;
-
-    public override void ActivateResearch()
-    {
-        
-    }
+    public ResourceRoom room;
 }

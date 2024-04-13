@@ -627,8 +627,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
   IsActive: 0
-  PanelAnchor: {fileID: 5604339789343604804}
-  SelectActivityPanel: {fileID: 2431288705876789555, guid: 8c298325197c702419825f6a72b2d2b8, type: 3}
+  roomPanelPivot: {fileID: 5604339789343604804}
+  roomPanelPrefab: {fileID: 2431288705876789555, guid: 8c298325197c702419825f6a72b2d2b8, type: 3}
 --- !u!1 &4455157183770399469
 GameObject:
   m_ObjectHideFlags: 0

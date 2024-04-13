@@ -8,11 +8,6 @@ public class RecreationRoomPanelUI : RoomPanelUI
     public Worksop room;
     [SerializeField] private Slider _curePeople;
 
-    public override void ActivateResearch()
-    {
-        
-    }
-
     private void OnEnable()
     {
         Debug.Log("asdad");

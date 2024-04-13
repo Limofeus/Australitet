@@ -6,8 +6,4 @@ public class GardenRoomPanelUI : RoomPanelUI
 {
     public GardenBed room;
 
-    public override void ActivateResearch()
-    {
-        
-    }
 }

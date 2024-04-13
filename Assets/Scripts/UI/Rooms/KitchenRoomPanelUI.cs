@@ -5,9 +5,4 @@ using UnityEngine;
 public class KitchenRoomPanelUI : RoomPanelUI
 {
     public Kitchen room;
-
-    public override void ActivateResearch()
-    {
-        
-    }
 }

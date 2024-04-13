@@ -5,9 +5,4 @@ using UnityEngine;
 public class StorageRoomPanelUI : RoomPanelUI
 {
     public Storage room;
-
-    public override void ActivateResearch()
-    {
-        
-    }
 }

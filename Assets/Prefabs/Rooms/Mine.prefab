@@ -392,8 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
   IsActive: 0
-  PanelAnchor: {fileID: 5112943034169784895}
-  SelectActivityPanel: {fileID: 2431288705876789555, guid: e588d2febaa1de542ab5ef248419fd29, type: 3}
+  roomPanelPivot: {fileID: 5112943034169784895}
+  roomPanelPrefab: {fileID: 2431288705876789555, guid: e588d2febaa1de542ab5ef248419fd29, type: 3}
   minedResourceName: 
   resourceLight: {fileID: 8821225396045447697}
 --- !u!1 &5551940820472512796
