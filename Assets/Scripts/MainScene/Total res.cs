@@ -2,10 +2,11 @@ using UnityEngine;
 
 public static class Totalres
 {
-    public static People people = new (100, 0, 0);
+    public static People people = new (7, 0, 0, 7);
 
     public static Resourse food = new (100, 10);
     public static Resourse rawFood = new (100, 10);
+    public static Resourse metal = new (100, 10);
 
     public static int reviewedPeopleCount = 0;
     public static int sickPeople => people.Sick;

@@ -6,6 +6,15 @@ public abstract class BigEvent : GameEvent
 {
     public int eventIconId;
     public int buttonCount;
+    public int limitTimeSinceCast;
 
     public abstract void ButtonPressed(int buttonId);
+
+    public override void UpdateTimeSinceCast()
+    {
+        if(timeSinceEvent >= 0)
+        {
+            timeSinceEvent = Mathf.Min(timeSinceEvent + 1, limitTimeSinceCast);
+        }
+    }
 }

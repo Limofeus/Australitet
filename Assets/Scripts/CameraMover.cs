@@ -36,7 +36,7 @@ namespace MainSceen
             }
             if (Input.GetMouseButton(1))
             {
-                Debug.Log(GetSensitivityMultiply());
+                //Debug.Log(GetSensitivityMultiply());
                 Vector2 newMousePos = Input.mousePosition;
                 var delta = _mousePositionDelta - newMousePos;
                 var newPosition = transform.position + new Vector3(delta.x, delta.y) 

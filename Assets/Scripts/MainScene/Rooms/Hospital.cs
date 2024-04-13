@@ -1,16 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Hospital : Room
 {
-    public int WorkerForAnalysis = 2;
     public int WorkerForCure = 1;
     public int HospitalCapacity = 30;
-    public bool IsAnalyzed = false;
-    private int _peopleInHospital = 0;
+    public int peopleInHospital = 0;
     private HospitalRoomPanelUI hospitalRoomPanelUI;
-
-    public int WorkerCount => (_peopleInHospital > 0? WorkerForCure : 0) + (IsAnalyzed? WorkerForAnalysis : 0);
 
     public override void OnRoomCreated()
     {
@@ -21,21 +18,38 @@ public class Hospital : Room
 
     protected override void RoomWork()
     {
-        var curePeople = Mathf.Min(_peopleInHospital, Totalres.sickPeople);
+        var curePeople = Mathf.Min(peopleInHospital, Totalres.sickPeople);
         Totalres.people.Sick -= curePeople;
         Totalres.reviewedPeopleCount = HospitalCapacity;
     }
 
     public void OnSliderValueChanged(int value)
     {
-        _peopleInHospital = value;
-        IsActive = _peopleInHospital > 0 ? true : false;
-    }
-
-    public void OnCheckboxValueChanged(bool isActive)
-    {
-        IsAnalyzed = isActive;
-        IsActive |= isActive ;
+        if (Totalres.people.Available > 0)
+        {
+            Totalres.people.Available += (peopleInHospital + (peopleInHospital > 0 ? 1 : 0));
+            if ((int)value > 0)
+            {
+                if ((int)value + WorkerForCure <= Totalres.people.Available)
+                {
+                    Totalres.people.Available -= (int)value + WorkerForCure;
+                }
+                else
+                {
+                    if (Totalres.people.Available > WorkerForCure)
+                    {
+                        value = peopleInHospital;
+                    }
+                    else
+                    {
+                        value = 0;
+                    }
+                }
+            }
+        }
+        Debug.Log("aaa " + Totalres.people.Available);
+        peopleInHospital = value;
+        IsActive = peopleInHospital > 0 ? true : false;
     }
 }
 
