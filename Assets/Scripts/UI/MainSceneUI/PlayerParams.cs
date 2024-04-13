@@ -5,9 +5,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PlayerParams : MonoBehaviour
 {
+    public static PlayerParams Singleton;
+    
     public TextMeshProUGUI DayCounter;
     public TextMeshProUGUI PeopleCounter;
     public TextMeshProUGUI SickPeopleCounter;
@@ -15,11 +18,22 @@ public class PlayerParams : MonoBehaviour
     public TextMeshProUGUI FoodCounter;
     public TextMeshProUGUI RawFoodCounter;
     public TextMeshProUGUI MaterialsCounter;
+    
     private int _dayNum = 1;
     private int _sickPeopleFraction;
     private int _hungryPeopleFraction;
 
+    private void Awake()
+    {
+        Singleton = this;
+    }
+
     private void Start()
+    {
+        AddText();
+    }
+
+    public void UpdateParams()
     {
         AddText();
     }
