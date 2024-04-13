@@ -27,7 +27,7 @@ public class Roomle : MonoBehaviour
     {
         Debug.Log("another day in paradise...");
         day++;
-        Totalres.people.Available += 2;
+        //Totalres.people.Available += 2;
         Totalres.food.currentValue += 2;
         AddText();
         Totalres.OnTheEndOfDay();
