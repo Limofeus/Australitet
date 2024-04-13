@@ -30,7 +30,7 @@ public class EventManager : MonoBehaviour
         new GenericSmallEvent("Охота с бумерангом", "Стивен пошёл на охоту с бумерангом, у него получилось убить пару грибных косуль, но ему пришлось пожертвовать собой (стоило использовать лук)", new (0, 1, 0f, 0f, 0f), new(0, -1, 0f, 0f, 0.05f), true, true),
         new GenericSmallEvent("БУНТ!", "Бунтари собрались.. капут", new (0, 0, -0.2f, 0f, 0f), new(-4, 0, 0f, 0f, 0f), false, true),
         new GenericSmallEvent("На 3 метра ниже", "Селяни решили похоронить собаку, которую они нашли под землёй, копая проход", new (0, 0, 0.3f, 0f, 0f), new(-2, 0, 0f, 0f, 0f), false, true),
-        new GenericSmallEvent("Новые селяне!", "Вам пощасливилось найти новых людей для своей колонии, но они оказались трупами :( ...ничего не изменилось...", new (0, 0, 0f, 0f, 0f), new(0, 0, 0f, 0f, 0f), true, true),
+        new GenericSmallEvent("Новые селяне!", "Вам посчастливилось найти новых людей для своей колонии, но они оказались трупами :( ...ничего не изменилось...", new (0, 0, 0f, 0f, 0f), new(0, 0, 0f, 0f, 0f), true, true),
     };
 
     public bool testCastEvent;
@@ -65,7 +65,7 @@ public class EventManager : MonoBehaviour
         if (listEventDebug)
         {
             listEventDebug = false;
-            DebugEvents(bigEvents);
+            DebugEvents(smallEvents);
         }
     }
     private void CastRandEvent()

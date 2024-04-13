@@ -200,7 +200,19 @@ MonoBehaviour:
   m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -8479874936033512344}
+        m_TargetAssemblyTypeName: GardenRoomPanelUI, Assembly-CSharp
+        m_MethodName: OnSliderChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2038642930370598882
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +445,7 @@ MonoBehaviour:
   screenRato: 4
   clampRatio: 0.4
   screenTenth: 0
+  _slider: {fileID: 6059602927396515275}
   room: {fileID: 0}
 --- !u!1 &4578040916037107364
 GameObject:

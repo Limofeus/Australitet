@@ -13,8 +13,8 @@ public class People
         get { return _max; }
         set
         {
-            PlayerParams.Singleton.UpdateParams();
             _max = value;
+            PlayerParams.Singleton?.UpdateParams();
         }
     }
 
@@ -23,8 +23,8 @@ public class People
         get { return _hungry; }
         set 
         {
-            PlayerParams.Singleton.UpdateParams();
             _hungry = Mathf.Clamp(value, 0, Max); 
+            PlayerParams.Singleton?.UpdateParams();
         }
     }
     public int Sick
@@ -32,8 +32,8 @@ public class People
         get { return _sick; }
         set 
         {
-            PlayerParams.Singleton.UpdateParams();
             _sick = Mathf.Clamp(value, 0, Max); 
+            PlayerParams.Singleton?.UpdateParams();
         }
     }
     public int Available
@@ -41,8 +41,8 @@ public class People
         get { return _available; }
         set 
         {
-            PlayerParams.Singleton.UpdateParams();
-            _available = Mathf.Clamp(value, 0, Max); 
+            _available = Mathf.Clamp(value, -100, Max); 
+            PlayerParams.Singleton?.UpdateParams();
         }
     }    
     
@@ -51,8 +51,8 @@ public class People
         get { return _happy; }
         set 
         {
-            PlayerParams.Singleton.UpdateParams();
             _happy = Mathf.Clamp(value, 0, Max); 
+            PlayerParams.Singleton?.UpdateParams();
         }
     }
 

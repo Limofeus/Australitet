@@ -13,6 +13,8 @@ public class HospitalRoomPanelUI : RoomPanelUI
     public void Init()
     {
         _slider.maxValue = room.HospitalCapacity;
+        _slider.value = 0;
+        lastValueOnSlider = 0;
         UpdateResults();
     }
 

@@ -1,21 +1,12 @@
-using Main;
+using System;
 
-public class ActivatedRoom : Room
+public abstract class ActivatedRoom : Room
 {
-    private const int _inhabitantsCount = 2;
-    private bool _isRoomActivated = false;
-
-    public void ChangeRoomActive()
+    public void OnStartOfDay()
     {
-        if (_isRoomActivated)
-        {
-            _isRoomActivated = false;
-            PlayerResources.AvailableInhabitantsNumber += _inhabitantsCount;
-        }
-        else if (PlayerResources.AvailableInhabitantsNumber >= _inhabitantsCount)
-        {
-            _isRoomActivated = true;
-            PlayerResources.AvailableInhabitantsNumber -= _inhabitantsCount;
-        }
+        if (Totalres.people.Available < 0)
+            ClearPeople();
     }
+
+    protected abstract void ClearPeople();
 }
