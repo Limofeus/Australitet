@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MainMenu
@@ -10,17 +9,20 @@ namespace MainMenu
         public void Play()
         {
             Debug.Log("Play");
+            SceneManager.LoadScene("Main");
         }
 
         public void Settings()
         {
             Debug.Log("Set");
+            SceneManager.LoadScene("TestSettingsMenu");
 
         }
 
         public void Exit()
         {
             Debug.Log("Ex");
+            Application.Quit();
 
         }
     }

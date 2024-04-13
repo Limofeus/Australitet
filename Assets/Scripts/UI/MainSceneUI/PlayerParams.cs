@@ -35,17 +35,24 @@ public class PlayerParams : MonoBehaviour
 
     public void UpdateParams()
     {
+        ClacFraction();
         AddText();
     }
 
     public void OnNewDay()
     {
-        _sickPeopleFraction = (int)(Totalres.GetSickyPeopleFraction() * 100);
-        _hungryPeopleFraction = (int)(Totalres.GetHungryPeopleFraction() * 100);
+        ClacFraction();
         _dayNum++;
         AddText();
         
     }
+
+    public void ClacFraction()
+    {
+        _sickPeopleFraction = (int)(Totalres.GetSickyPeopleFraction() * 100);
+        _hungryPeopleFraction = (int)(Totalres.GetHungryPeopleFraction() * 100);
+    }
+    
 
     private void AddText()
     {
