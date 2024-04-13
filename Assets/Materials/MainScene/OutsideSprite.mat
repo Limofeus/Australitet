@@ -80,8 +80,8 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _Hieght: 500
-    - _L1CamSway: 0
-    - _L2CamSway: 0
+    - _L1CamSway: 0.003
+    - _L2CamSway: 0.006
     - _MultL1: 1.5
     - _Offset: -0.4
     - _dist: 500
