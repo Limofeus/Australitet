@@ -18,7 +18,16 @@ public class HospitalRoomPanelUI : RoomPanelUI
 
     public void OnSliderChanged()
     {
-        room.OnSliderValueChanged((int)_slider.value);
+        var different = (int)_slider.value - lastValueOnSlider;
+        if (different <= Totalres.people.Available)
+        {
+            room.OnSliderValueChanged((int)_slider.value);
+            lastValueOnSlider = (int)_slider.value;
+        }
+        else
+        {
+            _slider.value = lastValueOnSlider;
+        }
         UpdateResults();
     }
 

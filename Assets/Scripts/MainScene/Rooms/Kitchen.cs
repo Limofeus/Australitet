@@ -5,12 +5,12 @@ public class Kitchen : Room
 
     protected override void RoomWork()
     {
-        var hasEnoughSpace = Totalres.food.currentValue + foodPerDay <= Totalres.food.maxValue;
-        var hasEnoughRawFood = Totalres.rawFood.currentValue >= rawFoodPerDay;
+        var hasEnoughSpace = Totalres.food.CurrentValue + foodPerDay <= Totalres.food.MaxValue;
+        var hasEnoughRawFood = Totalres.rawFood.CurrentValue >= rawFoodPerDay;
         if (hasEnoughSpace && hasEnoughRawFood)
         {
-            Totalres.AddRes(ref Totalres.food, foodPerDay);
-            Totalres.RedRes(ref Totalres.rawFood, rawFoodPerDay);
+            Totalres.food.CurrentValue += foodPerDay;
+            Totalres.rawFood.CurrentValue -= rawFoodPerDay;
         }
     }
 }

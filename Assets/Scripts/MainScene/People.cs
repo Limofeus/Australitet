@@ -6,34 +6,59 @@ public class People
     private int _sick;
     private int _available;
     private int _happy;
+    private int _max;
 
-    public int max;
+    public int Max
+    {
+        get { return _max; }
+        set
+        {
+            PlayerParams.Singleton.UpdateParams();
+            _max = value;
+        }
+    }
 
     public int Hungry
     {
         get { return _hungry; }
-        set { _hungry = Mathf.Clamp(value, 0, max); }
+        set 
+        {
+            PlayerParams.Singleton.UpdateParams();
+            _hungry = Mathf.Clamp(value, 0, Max); 
+        }
     }
     public int Sick
     {
         get { return _sick; }
-        set { _sick = Mathf.Clamp(value, 0, max); }
+        set 
+        {
+            PlayerParams.Singleton.UpdateParams();
+            _sick = Mathf.Clamp(value, 0, Max); 
+        }
     }
     public int Available
     {
         get { return _available; }
-        set { _available = Mathf.Clamp(value, 0, max); }
+        set 
+        {
+            PlayerParams.Singleton.UpdateParams();
+            _available = Mathf.Clamp(value, 0, Max); 
+        }
     }    
     
     public int Happy
     {
         get { return _happy; }
-        set { _happy = Mathf.Clamp(value, 0, max); }
+        set 
+        {
+            PlayerParams.Singleton.UpdateParams();
+            _happy = Mathf.Clamp(value, 0, Max); 
+        }
     }
 
     public People(int maxPeople, int hungryPeople, int sickPeople, int happy)
     {
-        max = maxPeople;
+        Max = maxPeople;
         Hungry = hungryPeople;
         Sick = sickPeople;
         Available = maxPeople;
