@@ -28,7 +28,7 @@ public class GenericSmallEvent : SmallEvent
     public bool oneTimeEvent = false;
     public bool unplayed = true;
     public bool memes;
-    const bool memess = false;
+    const bool memess = true;
     public override bool IsPossible()
     {
         bool isPossible = true;
@@ -66,5 +66,7 @@ public class GenericSmallEvent : SmallEvent
         this.resTestClass = resTestClass;
         this.resAddClass = resAddClass;
         this.memes = memes;
+        this.eventName = eventName;
+        this.eventDescription = eventDescription;
     }
 }

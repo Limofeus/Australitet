@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
-public class Hospital : Room
+public class Hospital : ActivatedRoom
 {
     public int WorkerForCure = 1;
     public int HospitalCapacity = 30;
@@ -28,11 +26,11 @@ public class Hospital : Room
         if (peopleInHospital != value)
         {
             Totalres.people.Available += (peopleInHospital + (peopleInHospital > 0 ? 1 : 0));
-            if ((int)value > 0)
+            if (value > 0)
             {
-                if ((int)value + WorkerForCure <= Totalres.people.Available)
+                if (value + WorkerForCure <= Totalres.people.Available)
                 {
-                    Totalres.people.Available -= (int)value + WorkerForCure;
+                    Totalres.people.Available -= value + WorkerForCure;
                 }
                 else
                 {
@@ -47,9 +45,14 @@ public class Hospital : Room
                 }
             }
         }
-        Debug.Log("aaa " + Totalres.people.Available);
         peopleInHospital = value;
         IsActive = peopleInHospital > 0 ? true : false;
+    }
+
+    protected override void ClearPeople()
+    {
+        peopleInHospital = 0;
+        hospitalRoomPanelUI.Init();
     }
 }
 

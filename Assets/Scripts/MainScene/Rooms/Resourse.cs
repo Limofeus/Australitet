@@ -12,8 +12,8 @@ public class Resourse
         get { return _maxValue; }
         set 
         {
-            PlayerParams.Singleton.UpdateParams();
             _maxValue = value; 
+            PlayerParams.Singleton?.UpdateParams();
         }
     }
 
@@ -22,8 +22,8 @@ public class Resourse
         get { return _currentValue; }
         set
         {
-            PlayerParams.Singleton.UpdateParams();
             _currentValue = Mathf.Clamp(value, 0, _maxValue);
+            PlayerParams.Singleton?.UpdateParams();
         }
     }
 

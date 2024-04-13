@@ -159,8 +159,20 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
+      m_Calls:
+      - m_Target: {fileID: 556525952713090862}
+        m_TargetAssemblyTypeName: KitchenRoomPanelUI, Assembly-CSharp
+        m_MethodName: OnCheckBoxChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!1 &2131055630631294776
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +344,7 @@ MonoBehaviour:
   screenRato: 4
   clampRatio: 0.4
   screenTenth: 0
+  _checkBox: {fileID: 242924524642598554}
   room: {fileID: 0}
 --- !u!1 &3297351388909396036
 GameObject:
