@@ -231,7 +231,6 @@ MonoBehaviour:
   clampRatio: 0.2
   screenTenth: 0
   _slider: {fileID: 2792296471387570580}
-  _chechbox: {fileID: 0}
   _peopleCountInResults: {fileID: 6825039204892606632}
   _workerCountInResults: {fileID: 5552282134264176358}
   room: {fileID: 0}

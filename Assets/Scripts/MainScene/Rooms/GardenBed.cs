@@ -27,15 +27,17 @@ public class GardenBed : ActivatedRoom
     public void OnSliderChanged(int sliderCondition)
     {
         condition = sliderCondition;
-        if (sliderCondition != 0)
-            IsActive = true;
-        else
-            IsActive = false;
 
-        if (IsActive)
+        if (sliderCondition != 0 && !IsActive)
+        {
+            IsActive = true;
             Totalres.people.Available -= WorkerCount;
-        else
+        }
+        else if (sliderCondition == 0 && IsActive)
+        {
+            IsActive = false;
             Totalres.people.Available += WorkerCount;
+        }   
     }
 
     protected override void RoomWork()

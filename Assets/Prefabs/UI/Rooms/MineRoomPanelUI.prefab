@@ -84,7 +84,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2479410210055070975}
+        m_TargetAssemblyTypeName: MineRoomPanelUI, Assembly-CSharp
+        m_MethodName: OnCheckBoxChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1723565086439107449
 GameObject:
@@ -333,6 +345,7 @@ MonoBehaviour:
   screenRato: 4
   clampRatio: 0.4
   screenTenth: 0
+  _checkBox: {fileID: 5256688915187120948}
   room: {fileID: 0}
 --- !u!1 &3145539705483383926
 GameObject:

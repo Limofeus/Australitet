@@ -35,7 +35,6 @@ public class EmptyRoom : Room
     public void ShowRoomTypeSelectWindow()
     {
         roomTypeSelectionPanel.panelOpened = true;
-        Debug.Log("AAAAAAA");
     }
     public void SelectRoom(int roomId)
     {

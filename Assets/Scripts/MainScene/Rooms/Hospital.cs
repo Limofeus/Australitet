@@ -25,7 +25,7 @@ public class Hospital : ActivatedRoom
     {
         if (peopleInHospital != value)
         {
-            Totalres.people.Available += (peopleInHospital + (peopleInHospital > 0 ? 1 : 0));
+            Totalres.people.Available += (peopleInHospital + (peopleInHospital > 0 ? WorkerForCure : 0));
             if (value > 0)
             {
                 if (value + WorkerForCure <= Totalres.people.Available)
