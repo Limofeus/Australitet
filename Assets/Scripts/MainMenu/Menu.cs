@@ -6,10 +6,12 @@ namespace MainMenu
 {
     public class Menu : MonoBehaviour
     {
+        public DontDestroy dontDestroy;
         public void Play()
         {
             Debug.Log("Play");
             SceneManager.LoadScene("Main");
+            dontDestroy.MuteMusic();
         }
 
         public void Settings()

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DontDestroy : MonoBehaviour
 {
     public static DontDestroy instance;
+
     void Start()
     {
         if (instance != null)
@@ -16,17 +17,11 @@ public class DontDestroy : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        instance.GetComponent<AudioSource>().mute = false;
     }
 
-    private void Update()
+    public void MuteMusic()
     {
-        if (SceneManager.GetActiveScene().buildIndex > 1)
-        {
-            gameObject.GetComponent<AudioSource>().mute = true;
-        }
-        else
-        {
-            gameObject.GetComponent<AudioSource>().mute = false;
-        }
+        instance.GetComponent<AudioSource>().mute = true;
     }
 }
