@@ -13,11 +13,6 @@ public class SmallTestEvent : SmallEvent
         throw new System.NotImplementedException();
     }
 
-    public override void OnDayEnd()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public SmallTestEvent(string evName)
     {
         eventName = evName;

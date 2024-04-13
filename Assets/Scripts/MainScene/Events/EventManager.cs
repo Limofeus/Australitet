@@ -23,16 +23,14 @@ public class EventManager : MonoBehaviour
 
     public SmallEvent[] smallEvents = new SmallEvent[]
     {
-        new SmallTestEvent("SEV1!"),
-        new SmallTestEvent("SEV2!"),
-        new SmallTestEvent("SEV3!"),
-        new SmallTestEvent("SEV4!"),
-        new SmallTestEvent("SEV5!"),
-        new SmallTestEvent("SEV6!"),
-        new SmallTestEvent("SEV7!"),
-        new SmallTestEvent("SEV8!"),
-        new SmallTestEvent("SEV9!"),
-        new SmallTestEvent("SEV0!")
+        new GenericSmallEvent("День Кенгуру", "Выжившие празднуют день кенгуру, часть свободных людей развлекаются", new (2, 0, -0.9f, 0.1f, 0f), new(-2, 0, 0.1f, 0.1f, 0f), false, true),
+        new GenericSmallEvent("Повар отжигает", "Повар.. сам не свой, всё", new (0, 0, 0f, -0.9f, 0f), new(0, 0, 0f, 0.15f, 0f), false, true),
+        new GenericSmallEvent("Кашель", "Похоже, что часть людей болеет", new (0, 0, 0f, 0f, 0.5f), new(0, 0, 0f, 0f, 0f), false, true),
+        new GenericSmallEvent("Жвачка Джоржа", "Джорж уронил жвачку, а Боб её съел.. из о рта в рот (через пол) получается микроб", new (0, 0, 0f, 0f, 0f), new(0, 0, 0f, 0f, 0.05f), false, true),
+        new GenericSmallEvent("Охота с бумерангом", "Стивен пошёл на охоту с бумерангом, у него получилось убить пару грибных косуль, но ему пришлось пожертвовать собой (стоило использовать лук)", new (0, 1, 0f, 0f, 0f), new(0, -1, 0f, 0f, 0.05f), true, true),
+        new GenericSmallEvent("БУНТ!", "Бунтари собрались.. капут", new (0, 0, -0.2f, 0f, 0f), new(-4, 0, 0f, 0f, 0f), false, true),
+        new GenericSmallEvent("На 3 метра ниже", "Селяни решили похоронить собаку, которую они нашли под землёй, копая проход", new (0, 0, 0.3f, 0f, 0f), new(-2, 0, 0f, 0f, 0f), false, true),
+        new GenericSmallEvent("Новые селяне!", "Вам пощасливилось найти новых людей для своей колонии, но они оказались трупами :( ...ничего не изменилось...", new (0, 0, 0f, 0f, 0f), new(0, 0, 0f, 0f, 0f), true, true),
     };
 
     public bool testCastEvent;
@@ -109,7 +107,7 @@ public class EventManager : MonoBehaviour
         SmallEvent eventToCast = (SmallEvent)SelectMaxTimeEvent(smallEvents);
         UpdateAllEventCastTime(smallEvents);
         eventToCast.Cast();
-        Debug.Log($"CASTED >{eventToCast.eventName}< EVENT");
+        Debug.Log($"CASTED >{eventToCast.eventName} | {eventToCast.eventDescription}< EVENT");
     }
 
     private void LimitBigEventTime()

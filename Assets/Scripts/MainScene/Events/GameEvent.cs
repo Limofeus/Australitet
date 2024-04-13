@@ -11,9 +11,9 @@ public abstract class GameEvent
     public void Cast()
     {
         timeSinceEvent = 0;
+        OnDayStart();
     }
     public abstract void UpdateTimeSinceCast();
     public abstract bool IsPossible();
     public abstract void OnDayStart();
-    public abstract void OnDayEnd();
 }
