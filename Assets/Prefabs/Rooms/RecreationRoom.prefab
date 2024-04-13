@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &480246288020071448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5604339789343604804}
+  m_Layer: 0
+  m_Name: RoomPanelAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5604339789343604804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480246288020071448}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5300031231952315413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954640186664293645
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300031231952315413}
-  - component: {fileID: 362270047991573188}
+  - component: {fileID: 4479768566227584112}
   m_Layer: 0
   m_Name: RecreationRoom
   m_TagString: Untagged
@@ -563,6 +594,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5604339789343604804}
   - {fileID: 7002735193848848488}
   - {fileID: 5724882981725424067}
   - {fileID: 3227124511939678116}
@@ -581,7 +613,7 @@ Transform:
   - {fileID: 5473797926218146754}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &362270047991573188
+--- !u!114 &4479768566227584112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -590,13 +622,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3963841545538523388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf53c5578acb5d74aab47ee965a8acc7, type: 3}
+  m_Script: {fileID: 11500000, guid: f3590d56f7ec3124ca89131d649cdf8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
   IsActive: 0
-  panelPrefab: {fileID: 2431288705876789555, guid: 8c298325197c702419825f6a72b2d2b8, type: 3}
-  panelPivot: {fileID: 5473797926218146754}
+  PanelAnchor: {fileID: 5604339789343604804}
+  SelectActivityPanel: {fileID: 2431288705876789555, guid: 8c298325197c702419825f6a72b2d2b8, type: 3}
 --- !u!1 &4455157183770399469
 GameObject:
   m_ObjectHideFlags: 0

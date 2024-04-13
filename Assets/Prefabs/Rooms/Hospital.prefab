@@ -252,6 +252,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1520951960183751913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105405866541071438}
+  m_Layer: 0
+  m_Name: RoomPanelAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &105405866541071438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520951960183751913}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5300031231952315413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2339892973404488316
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 8821225396045447697}
-  _currentIntensity: 5
   _speed: 5
   _lightRange: 2
 --- !u!1 &2425026248900425110
@@ -612,7 +642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300031231952315413}
-  - component: {fileID: -4251043215126455751}
+  - component: {fileID: 3803275522763144567}
   m_Layer: 0
   m_Name: Hospital
   m_TagString: Untagged
@@ -633,6 +663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 105405866541071438}
   - {fileID: 3227124511939678116}
   - {fileID: 1034368073961230905}
   - {fileID: 6415268218544122311}
@@ -653,7 +684,7 @@ Transform:
   - {fileID: 4347495188691556275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4251043215126455751
+--- !u!114 &3803275522763144567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,10 +693,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3963841545538523388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705a36f5c7717e64d8f939a867016a94, type: 3}
+  m_Script: {fileID: 11500000, guid: fa2cecf9b042dd94ca9bcf7bc98a674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
+  IsActive: 0
+  PanelAnchor: {fileID: 105405866541071438}
+  SelectActivityPanel: {fileID: 2431288705876789555, guid: 4be5555a973c9b442b414a1b4ceaa5e2, type: 3}
 --- !u!1 &4194897445223093230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 3037810516360268838}
-  _currentIntensity: 5
   _speed: 5
   _lightRange: 2
 --- !u!1001 &707180818149914066

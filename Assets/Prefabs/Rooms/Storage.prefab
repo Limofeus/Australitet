@@ -420,6 +420,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1600715372305506028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7142886330874337819}
+  m_Layer: 0
+  m_Name: RoomPanelAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7142886330874337819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600715372305506028}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5300031231952315413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1608999275132423885
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +715,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _light: {fileID: 8821225396045447697}
-  _currentIntensity: 5
   _speed: 5
   _lightRange: 2
 --- !u!1 &3070912043222593820
@@ -780,7 +810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5300031231952315413}
-  - component: {fileID: -4251043215126455751}
+  - component: {fileID: 9073762361674830686}
   m_Layer: 0
   m_Name: Storage
   m_TagString: Untagged
@@ -801,6 +831,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7142886330874337819}
   - {fileID: 3227124511939678116}
   - {fileID: 1034368073961230905}
   - {fileID: 6415268218544122311}
@@ -823,7 +854,7 @@ Transform:
   - {fileID: 6142131353327464835}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4251043215126455751
+--- !u!114 &9073762361674830686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -832,10 +863,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3963841545538523388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705a36f5c7717e64d8f939a867016a94, type: 3}
+  m_Script: {fileID: 11500000, guid: 1016bc26828c6624dbd7ade5fbc0a5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
+  IsActive: 0
+  PanelAnchor: {fileID: 7142886330874337819}
+  SelectActivityPanel: {fileID: 2431288705876789555, guid: 9f38cfb7ec9dcb841b5eb45873510b87, type: 3}
 --- !u!1 &4445823880503025018
 GameObject:
   m_ObjectHideFlags: 0

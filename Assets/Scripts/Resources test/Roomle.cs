@@ -7,7 +7,10 @@ using UnityEngine.Serialization;
 
 public class Roomle : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI _people;
+    [SerializeField] private TextMeshProUGUI _food;
+    [SerializeField] private TextMeshProUGUI _day;
+    private int day = 1;
 
     private void Start()
     {
@@ -16,21 +19,17 @@ public class Roomle : MonoBehaviour
 
     public void AddText()
     {
-        _text.text = "";
-        _text.text += "Total Resources";
-        //_text.text += "\nMaterials: " + _mine.ResourcesAmount;
-        _text.text += "\nRaw food: " + Totalres.rawFood.currentValue;
-        _text.text += "\nCooked food: " + Totalres.food.currentValue;
-        _text.text += "\nPeople living: " + Totalres.people.max;
-        //_text.text += "\nSicked: " + Totalres.sickPeople.currentValue;
-        //_text.text += "\nHungered: " + Totalres.people.maxValue * Totalres.hungryPeopleFraction;
+        _people.text = Totalres.people.Available + " / " + Totalres.people.max;
+        _food.text = Totalres.food.currentValue + " / " + Totalres.food.maxValue;
+        _day.text = "Day " + day;
     }
     public void NewDay()
     {
         Debug.Log("another day in paradise...");
-
+        day++;
+        Totalres.people.Available += 2;
+        Totalres.food.currentValue += 2;
         AddText();
         Totalres.OnTheEndOfDay();
-
     }
 }
