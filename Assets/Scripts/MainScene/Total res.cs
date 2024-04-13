@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class Totalres
 {
-    public static People people = new (7, 0, 0, 7);
+    public static People people = new (50, 0, 0, 40);
 
     public static Resourse food = new (100, 10);
     public static Resourse rawFood = new (100, 10);
@@ -16,6 +16,7 @@ public static class Totalres
     {
         KillHungryPeople();
         KillSickyPeople();
+        people.ReturnTimeoutPeople();
     }
 
     private static void KillHungryPeople()

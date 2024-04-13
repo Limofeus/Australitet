@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EmptyRoom : Room
 {
+    private int _peopleForBuildRoom = 2;
+
     public Transform roomTypeSelectAnchor;
     public Transform roomTypeSelectRoomAnchor;
 
@@ -38,13 +40,16 @@ public class EmptyRoom : Room
     }
     public void SelectRoom(int roomId)
     {
-        PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectAnchor);
-        PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectRoomAnchor);
-        GameObject newRoom = Instantiate(roomPrefabs[roomId], transform.position, Quaternion.identity);
-        Room roomComp = newRoom.GetComponent<Room>();
-        roomComp.InitiateRoom(roomCoords);
-        BuildGrid.Singleton.rooms[BuildGrid.Singleton.rooms.IndexOf(this)] = roomComp;
-        OnRoomDestroyed();
-        Destroy(gameObject);
+        if (Totalres.people.TrySetTimeout(_peopleForBuildRoom))
+        {
+            PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectAnchor);
+            PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectRoomAnchor);
+            GameObject newRoom = Instantiate(roomPrefabs[roomId], transform.position, Quaternion.identity);
+            Room roomComp = newRoom.GetComponent<Room>();
+            roomComp.InitiateRoom(roomCoords);
+            BuildGrid.Singleton.rooms[BuildGrid.Singleton.rooms.IndexOf(this)] = roomComp;
+            OnRoomDestroyed();
+            Destroy(gameObject);
+        }
     }
 }

@@ -40,6 +40,7 @@ public class Hospital : ActivatedRoom
                     }
                     else
                     {
+                        hospitalRoomPanelUI.Init();
                         value = 0;
                     }
                 }

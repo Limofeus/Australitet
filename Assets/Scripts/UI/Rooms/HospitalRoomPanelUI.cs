@@ -35,7 +35,7 @@ public class HospitalRoomPanelUI : RoomPanelUI
 
     private void UpdateResults()
     {
-        _peopleCountInResults.text = ((int)_slider.value).ToString();
-        _workerCountInResults.text = (((int)_slider.value) > 0 ? room.WorkerForCure : 0).ToString();
+        _peopleCountInResults.text = (room.peopleInHospital).ToString();
+        _workerCountInResults.text = ((room.peopleInHospital) > 0 ? room.WorkerForCure : 0).ToString();
     }
 }

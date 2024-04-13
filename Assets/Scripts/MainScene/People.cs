@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class People
 {
@@ -39,7 +40,7 @@ public class People
     }
     public int Available
     {
-        get { return _available - Timeout; }
+        get { return _available; }
         set 
         {
             if (value > Max)
@@ -59,17 +60,26 @@ public class People
         }
     }
 
-    public int Timeout
+    public bool TrySetTimeout(int value)
     {
-        get 
+        if (Available - value >= 0)
         {
-            return _timeout;
+            SetTimeout(value);
+            return true;
         }
-        set
-        {
-            _timeout += Mathf.Clamp(value, 0, Max);
-            PlayerParams.Singleton?.UpdateParams();
-        }   
+        return false;
+    }
+
+    public void SetTimeout(int value)
+    {
+        _timeout += value;
+        Available -= value;
+    }
+
+    public void ReturnTimeoutPeople()
+    {
+        Available += _timeout;
+        _timeout = 0;
     }
 
     public People(int maxPeople, int hungryPeople, int sickPeople, int happy)

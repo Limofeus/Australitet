@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class BuildSuggestionPanel : MonoBehaviour
 {
+    private int _peopleForBuildRoom = 2;
     public RoomSuggestion suggestionOject;
 
     public void BuildNormal()
     {
-        suggestionOject.BuildRoom(false);
+        if (Totalres.people.TrySetTimeout(_peopleForBuildRoom))
+            suggestionOject.BuildRoom(false);
     }
     public void BuildVertical()
     {
-        suggestionOject.BuildRoom(true);
+        if (Totalres.people.TrySetTimeout(_peopleForBuildRoom))
+            suggestionOject.BuildRoom(true);
     }
 }

@@ -26,7 +26,7 @@ public class PlayerParams : MonoBehaviour
     private void Awake()
     {
         Singleton = this;
-        Totalres.people.Timeout += 0;
+        Totalres.people.SetTimeout(0);
     }
 
     private void Start()
@@ -45,7 +45,7 @@ public class PlayerParams : MonoBehaviour
         ClacFraction();
         _dayNum++;
         AddText();
-        
+        Totalres.OnTheEndOfDay();
     }
 
     public void ClacFraction()
