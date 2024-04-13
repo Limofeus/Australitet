@@ -27,7 +27,7 @@ public class BigTestEvent : BigEvent
 
     public override bool IsPossible()
     {
-        throw new System.NotImplementedException();
+        return true;
     }
 
     public override void OnDayEnd()
@@ -41,5 +41,11 @@ public class BigTestEvent : BigEvent
         eventDescription = "Вам дали на выбор 2 опции";
         buttonCount = 2;
         eventIconId = 21;
+    }
+
+    public BigTestEvent(string nameE, int tse)
+    {
+        eventName = nameE;
+        timeSinceEvent = tse;
     }
 }

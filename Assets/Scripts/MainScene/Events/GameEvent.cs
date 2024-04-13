@@ -4,9 +4,15 @@ using UnityEngine;
 
 public abstract class GameEvent
 {
+    public int timeSinceEvent = -1;
     public string eventName;
     public string eventDescription;
 
+    public void Cast()
+    {
+        timeSinceEvent = 0;
+    }
+    public abstract void UpdateTimeSinceCast();
     public abstract bool IsPossible();
     public abstract void OnDayStart();
     public abstract void OnDayEnd();
