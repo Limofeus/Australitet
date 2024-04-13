@@ -4,12 +4,32 @@ using UnityEngine;
 
 public class Resourse
 {
-    public int maxValue;
-    public int currentValue;
+    private int _maxValue;
+    private int _currentValue;
+
+    public int MaxValue
+    {
+        get { return _maxValue; }
+        set 
+        {
+            PlayerParams.Singleton.UpdateParams();
+            _maxValue = value; 
+        }
+    }
+
+    public int CurrentValue 
+    {
+        get { return _currentValue; }
+        set
+        {
+            PlayerParams.Singleton.UpdateParams();
+            _currentValue = Mathf.Clamp(value, 0, _maxValue);
+        }
+    }
 
     public Resourse(int mx, int cur)
     {
-        maxValue = mx;
-        currentValue = cur;
+        MaxValue = mx;
+        CurrentValue = cur;
     }
 }

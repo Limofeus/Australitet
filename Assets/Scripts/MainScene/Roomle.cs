@@ -19,8 +19,8 @@ public class Roomle : MonoBehaviour
 
     public void AddText()
     {
-        _people.text = Totalres.people.Available + " / " + Totalres.people.max;
-        _food.text = Totalres.food.currentValue + " / " + Totalres.food.maxValue;
+        _people.text = Totalres.people.Available + " / " + Totalres.people.Max;
+        _food.text = Totalres.food.CurrentValue + " / " + Totalres.food.MaxValue;
         _day.text = "Day " + day;
     }
     public void NewDay()
@@ -28,7 +28,7 @@ public class Roomle : MonoBehaviour
         Debug.Log("another day in paradise...");
         day++;
         //Totalres.people.Available += 2;
-        Totalres.food.currentValue += 2;
+        Totalres.food.CurrentValue += 2;
         AddText();
         Totalres.OnTheEndOfDay();
     }

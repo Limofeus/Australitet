@@ -12,32 +12,6 @@ public static class Totalres
     public static int sickPeople => people.Sick;
     public static int hungryPeople => people.Hungry;
 
-
-    public static void AddRes(ref Resourse res, int value)
-    {
-        var newValue = res.currentValue + value;
-        if (newValue > res.maxValue)
-            res.currentValue = newValue;
-        else
-            res.currentValue = res.maxValue;
-    }
-
-    public static void RedRes(ref Resourse res, int value)
-    {
-        if (res.currentValue >= value) 
-            res.currentValue -= value;
-        else 
-            res.currentValue = 0;
-    }
-
-    public static void KillPeople(ref People people, int value)
-    {
-        if (people.max >= value) 
-            people.max -= value;
-        else 
-            people.max = 0;
-    }
-
     public static void OnTheEndOfDay()
     {
         KillHungryPeople();
@@ -48,32 +22,32 @@ public static class Totalres
     {
         var deathCoefficient = Random.Range(3, 6) * 0.01f;
         if (GetHungryPeopleFraction() > 0.5f)
-            KillPeople(ref people, (int)(people.max * deathCoefficient));
-    }
-
-    public static float GetHungryPeopleFraction()
-    {
-        var hungryPeopleFraction = people.max - food.currentValue;
-
-        if (hungryPeopleFraction < 0) 
-            hungryPeopleFraction = 0;
-
-        return hungryPeopleFraction / people.max;
+            people.Max -= (int)(people.Max * deathCoefficient);
     }
 
     private static void KillSickyPeople()
     {
         var deathCoefficient = Random.Range(0, 10) * 0.01f;
-        KillPeople(ref people, (int)(sickPeople * deathCoefficient));
+        people.Max -= (int)(sickPeople * deathCoefficient);
     }
 
     public static float GetSickyPeopleFraction()
     {
-        var noInfoPeopleCount = people.max - reviewedPeopleCount;
+        var noInfoPeopleCount = people.Max - reviewedPeopleCount;
         if (noInfoPeopleCount < 0)
             noInfoPeopleCount = 0;
 
-        var errorFraction = (float)noInfoPeopleCount / people.max * Random.Range(-1f,1f);
-        return Mathf.Clamp01(sickPeople / people.max + errorFraction / 2);
+        var errorFraction = (float)noInfoPeopleCount / people.Max * Random.Range(-1f,1f);
+        return Mathf.Clamp01(sickPeople / people.Max + errorFraction / 2);
+    }
+
+    public static float GetHungryPeopleFraction()
+    {
+        var hungryPeopleFraction = people.Max - food.CurrentValue;
+
+        if (hungryPeopleFraction < 0)
+            hungryPeopleFraction = 0;
+
+        return hungryPeopleFraction / people.Max;
     }
 }

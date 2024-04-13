@@ -50,9 +50,9 @@ public class PlayerParams : MonoBehaviour
     private void AddText()
     {
         DayCounter.text = "Day " + _dayNum;
-        PeopleCounter.text = Totalres.people.Available + " / " + Totalres.people.max;
-        FoodCounter.text = Totalres.food.currentValue + " / " + Totalres.food.maxValue;
-        RawFoodCounter.text = Totalres.rawFood.currentValue + " / " + Totalres.rawFood.maxValue;
+        PeopleCounter.text = Totalres.people.Available + " / " + Totalres.people.Max;
+        FoodCounter.text = Totalres.food.CurrentValue + " / " + Totalres.food.MaxValue;
+        RawFoodCounter.text = Totalres.rawFood.CurrentValue + " / " + Totalres.rawFood.MaxValue;
         SickPeopleCounter.text = _sickPeopleFraction + "%";
         HungryPeopleCounter.text = _hungryPeopleFraction + "%";
         //MaterialsCounter.text = Totalres.materials.currentValue + " / " + Totalres.materials.maxValue;

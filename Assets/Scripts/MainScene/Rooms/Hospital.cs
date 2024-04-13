@@ -25,7 +25,7 @@ public class Hospital : Room
 
     public void OnSliderValueChanged(int value)
     {
-        if (Totalres.people.Available > 0)
+        if (peopleInHospital != value)
         {
             Totalres.people.Available += (peopleInHospital + (peopleInHospital > 0 ? 1 : 0));
             if ((int)value > 0)
