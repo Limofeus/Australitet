@@ -15,6 +15,10 @@ namespace MainSceen
         public float _mapOffsVert = 8f;
         public static float _currentZoom = 0;
 
+        private void Start()
+        {
+            Zoom(0f);
+        }
         private void Update()
         {
             Move();
