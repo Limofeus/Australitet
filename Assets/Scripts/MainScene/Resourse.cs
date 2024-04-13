@@ -27,9 +27,9 @@ public class Resourse
         }
     }
 
-    public Resourse(int mx, int cur)
+    public Resourse(int max)
     {
-        MaxValue = mx;
-        CurrentValue = cur;
+        MaxValue = max;
+        CurrentValue = 0;
     }
 }

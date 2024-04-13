@@ -20,8 +20,6 @@ public class PlayerParams : MonoBehaviour
     public TextMeshProUGUI MaterialsCounter;
     
     private int _dayNum = 1;
-    private int _sickPeopleFraction;
-    private int _hungryPeopleFraction;
 
     private void Awake()
     {
@@ -36,34 +34,28 @@ public class PlayerParams : MonoBehaviour
 
     public void UpdateParams()
     {
-        ClacFraction();
         AddText();
     }
 
     public void OnNewDay()
     {
-        ClacFraction();
         _dayNum++;
         AddText();
         Totalres.OnTheEndOfDay();
+        foreach (var room in BuildGrid.Singleton.rooms)
+        {
+            room.OnTheEndOfDay();
+        }
     }
-
-    public void ClacFraction()
-    {
-        _sickPeopleFraction = (int)(Totalres.GetSickyPeopleFraction() * 100);
-        _hungryPeopleFraction = (int)(Totalres.GetHungryPeopleFraction() * 100);
-    }
-    
 
     private void AddText()
     {
-        Debug.Log(Totalres.people);
         DayCounter.text = "Day " + _dayNum;
         PeopleCounter.text = Totalres.people?.Available + " / " + Totalres.people?.Max;
         FoodCounter.text = Totalres.food?.CurrentValue + " / " + Totalres.food?.MaxValue;
         RawFoodCounter.text = Totalres.rawFood?.CurrentValue + " / " + Totalres.rawFood?.MaxValue;
-        SickPeopleCounter.text = _sickPeopleFraction + "%";
-        HungryPeopleCounter.text = _hungryPeopleFraction + "%";
+        SickPeopleCounter.text = (int)(Totalres.GetSickyPeopleFraction() * 100) + "%";
+        HungryPeopleCounter.text = (int)(Totalres.GetHungryPeopleFraction() * 100) + "%";
         //MaterialsCounter.text = Totalres.materials.currentValue + " / " + Totalres.materials.maxValue;
     }
 }

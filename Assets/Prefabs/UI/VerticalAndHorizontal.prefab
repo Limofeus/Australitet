@@ -203,7 +203,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 3af8470c7c6a32a4ab828069ba5de64d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 5b454a0c6faf75e45b4cde00e6d43488, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 1916966133973842002}
   - component: {fileID: 6875274670561111225}
   m_Layer: 5
-  m_Name: Down
+  m_Name: VerticalAndHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
