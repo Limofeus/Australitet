@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    public static EventManager Singleton { get; private set; }
     public enum EventType { SmallEvent, BigEvent};
     public List<EventType> eventSeq = new List<EventType> { EventType.SmallEvent, EventType.SmallEvent, EventType.SmallEvent, EventType.BigEvent};
     public int eventCounter = -1;
@@ -42,6 +43,7 @@ public class EventManager : MonoBehaviour
 
     private void Awake()
     {
+        Singleton = this;
         LimitBigEventTime();
     }
 
@@ -68,7 +70,7 @@ public class EventManager : MonoBehaviour
             DebugEvents(smallEvents);
         }
     }
-    private void CastRandEvent()
+    public void CastRandEvent()
     {
         if(eventCounter < 0)
         {
@@ -97,17 +99,26 @@ public class EventManager : MonoBehaviour
     }
     private void CastBigEvent()
     {
-        BigEvent eventToCast = (BigEvent)SelectMaxTimeEvent(bigEvents);
-        UpdateAllEventCastTime(bigEvents);
-        eventToCast.Cast();
-        Debug.Log($"CASTED >{eventToCast.eventName}< EVENT");
+        GameEvent eventToCastMightBeNull = SelectMaxTimeEvent(bigEvents);
+        if(eventToCastMightBeNull != null)
+        {
+            BigEvent eventToCast = (BigEvent)eventToCastMightBeNull;
+            UpdateAllEventCastTime(bigEvents);
+            eventToCast.Cast();
+            Debug.Log($"CASTED >{eventToCast.eventName}< EVENT");
+        }
     }
     private void CastSmallEvent()
     {
-        SmallEvent eventToCast = (SmallEvent)SelectMaxTimeEvent(smallEvents);
-        UpdateAllEventCastTime(smallEvents);
-        eventToCast.Cast();
-        Debug.Log($"CASTED >{eventToCast.eventName} | {eventToCast.eventDescription}< EVENT");
+        GameEvent eventToCastMightBeNull = SelectMaxTimeEvent(smallEvents);
+        if(eventToCastMightBeNull != null)
+        {
+            SmallEvent eventToCast = (SmallEvent)eventToCastMightBeNull;
+            UpdateAllEventCastTime(smallEvents);
+            eventToCast.Cast();
+            EventUiHandler.Singleton.SetSmallEvent(eventToCast.eventName, eventToCast.eventDescription);
+            Debug.Log($"CASTED >{eventToCast.eventName} | {eventToCast.eventDescription}< EVENT");
+        }
     }
 
     private void LimitBigEventTime()
@@ -139,6 +150,10 @@ public class EventManager : MonoBehaviour
                 }
             }
         }
+        Debug.Log($"Pos EV Count: {possibleEvents.Count}");
+
+        if(possibleEvents.Count == 0) return null;
+
         List<GameEvent> maxTimeEvents = new List<GameEvent>();
         foreach (var checkEvent in possibleEvents)
         {
