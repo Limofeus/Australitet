@@ -339,15 +339,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
+  IsActive: 0
   roomTypeSelectAnchor: {fileID: 6274436611856675832}
   roomTypeSelectRoomAnchor: {fileID: 5947518981550397569}
   roomTypeSelectButtonPrefab: {fileID: 4311889346375552910, guid: f64999a27afa3fd4ba029342b08be2aa, type: 3}
   roomTypeSelectPanelPrefab: {fileID: 6891552692624258770, guid: 47ad95b2b456ce04992022c2923dd478, type: 3}
   roomPrefabs:
+  - {fileID: 3963841545538523388, guid: e6c3bcb0dac6c4f43a1004b1986f8751, type: 3}
   - {fileID: 3963841545538523388, guid: b44a436d08b6c1340865cbeac1f2def9, type: 3}
   - {fileID: 3963841545538523388, guid: 613988a1af56f4947b1c10e26a0e2b42, type: 3}
   - {fileID: 3963841545538523388, guid: 069a709c091e09d4294eb411dd7ea825, type: 3}
   - {fileID: 3963841545538523388, guid: cc57d7d56309b9243971646eee9664df, type: 3}
+  - {fileID: 3963841545538523388, guid: 8e820f8ee227eb342898edb53592be29, type: 3}
 --- !u!1 &6563022526541472551
 GameObject:
   m_ObjectHideFlags: 0

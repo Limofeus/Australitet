@@ -595,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomCoords: {x: 0, y: 0}
   IsActive: 0
-  panelPrefab: {fileID: 2431288705876789555, guid: 49297bfc1bedc5e45853eefc6e75e0eb, type: 3}
+  panelPrefab: {fileID: 2431288705876789555, guid: 8c298325197c702419825f6a72b2d2b8, type: 3}
   panelPivot: {fileID: 5473797926218146754}
 --- !u!1 &4455157183770399469
 GameObject:
