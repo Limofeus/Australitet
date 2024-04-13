@@ -83,6 +83,10 @@ MonoBehaviour:
   panelTrackTransform: {fileID: 3946865619885571526}
   coords: {x: 0, y: 0}
   buildGrid: {fileID: 0}
+  miningAudio:
+  - {fileID: 8300000, guid: 76740d575b8ec88438286f244bb50b11, type: 3}
+  - {fileID: 8300000, guid: 7993a306549e8cd4a8d2be81fa83b3b3, type: 3}
+  - {fileID: 8300000, guid: ba28fd7fe3e5f1e49a82a8d779568588, type: 3}
 --- !u!1 &7029854594398618977
 GameObject:
   m_ObjectHideFlags: 0

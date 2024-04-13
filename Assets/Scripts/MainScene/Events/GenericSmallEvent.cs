@@ -53,7 +53,14 @@ public class GenericSmallEvent : SmallEvent
     {
         if(oneTimeEvent)
             unplayed = false;
-        Totalres.people.Available += resAddClass.availablePeople;
+        if(resAddClass.availablePeople > 0)
+        {
+            Totalres.people.Available += resAddClass.availablePeople;
+        }
+        else
+        {
+            Totalres.people.SetTimeout(-resAddClass.availablePeople);
+        }
         Totalres.people.Max += resAddClass.maxPeople;
         Totalres.people.Happy += Mathf.FloorToInt(resAddClass.happinessPercent * Totalres.people.Max);
         Totalres.people.Hungry += Mathf.FloorToInt(resAddClass.hungryPercent * Totalres.people.Max);

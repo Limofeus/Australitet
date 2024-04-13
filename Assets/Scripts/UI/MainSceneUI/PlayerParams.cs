@@ -41,11 +41,14 @@ public class PlayerParams : MonoBehaviour
     {
         _dayNum++;
         AddText();
-        Totalres.OnTheEndOfDay();
+
+        EventManager.Singleton.CastRandEvent();
+
         foreach (var room in BuildGrid.Singleton.rooms)
         {
             room.OnTheEndOfDay();
         }
+        Totalres.OnTheEndOfDay();
     }
 
     private void AddText()
