@@ -9,10 +9,4 @@ public class WorkshopRoom : Room
         //RoomPanelUI testRoomPanelUI = CreatePanel<RoomPanelUI>(panelPivot, panelPrefab);
         //testRoomPanelUI.thisPanelsResearchRoom = this;
     }
-
-    public void OnButtonTest()
-    {
-        Debug.Log("RESEARCH");
-        Debug.Log(roomCoords);
-    }
 }

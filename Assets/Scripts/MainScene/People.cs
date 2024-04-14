@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class People
 {
@@ -16,7 +15,7 @@ public class People
         set
         {
             _max = value;
-            PlayerParams.Singleton?.UpdateParams();
+            PlayerParams.Singleton?.UpdateRealtimeParams();
         }
     }
 
@@ -26,7 +25,7 @@ public class People
         set 
         {
             _hungry = Mathf.Clamp(value, 0, Max); 
-            PlayerParams.Singleton?.UpdateParams();
+            PlayerParams.Singleton?.UpdateRealtimeParams();
         }
     }
     public int Sick
@@ -35,7 +34,7 @@ public class People
         set 
         {
             _sick = Mathf.Clamp(value, 0, Max); 
-            PlayerParams.Singleton?.UpdateParams();
+            PlayerParams.Singleton?.UpdateRealtimeParams();
         }
     }
     public int Available
@@ -46,7 +45,7 @@ public class People
             if (value > Max)
                 value = Max;
             _available = value; 
-            PlayerParams.Singleton?.UpdateParams();
+            PlayerParams.Singleton?.UpdateRealtimeParams();
         }
     }    
     
@@ -56,7 +55,7 @@ public class People
         set 
         {
             _happy = Mathf.Clamp(value, 0, Max); 
-            PlayerParams.Singleton?.UpdateParams();
+            PlayerParams.Singleton?.UpdateRealtimeParams();
         }
     }
 
@@ -89,5 +88,15 @@ public class People
         Sick = sickPeople;
         Available = maxPeople;
         Happy = happy;
+    }
+
+    public void UpdatePeopleCount()
+    {
+        Hungry = Hungry;
+        Sick = Sick;
+        Available = Available;
+        Happy = Happy;
+        Hungry = Hungry;
+        SetTimeout(0);
     }
 }

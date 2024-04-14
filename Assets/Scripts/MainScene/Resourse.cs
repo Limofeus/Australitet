@@ -13,7 +13,7 @@ public class Resourse
         set 
         {
             _maxValue = value; 
-            PlayerParams.Singleton?.UpdateParams();
+            PlayerParams.Singleton?.UpdateRealtimeParams();
         }
     }
 
@@ -23,13 +23,13 @@ public class Resourse
         set
         {
             _currentValue = Mathf.Clamp(value, 0, _maxValue);
-            PlayerParams.Singleton?.UpdateParams();
+            PlayerParams.Singleton?.UpdateRealtimeParams();
         }
     }
 
     public Resourse(int max)
     {
         MaxValue = max;
-        CurrentValue = 0;
+        CurrentValue = max;
     }
 }

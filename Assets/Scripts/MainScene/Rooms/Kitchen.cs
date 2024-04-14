@@ -17,7 +17,10 @@ public class Kitchen : ActivatedRoom
 
     protected override void ClearPeople()
     {
+        if (IsActive)
+            Totalres.people.Available += WorkerCount;
         IsActive = false;
+        kitchenRoomPanelUI.Init();
     }
 
     protected override void RoomWork()

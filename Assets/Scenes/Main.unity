@@ -3819,10 +3819,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf37edc364e3f743a8113f1a358d420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameEndPanelPrefab: {fileID: 0}
   DayCounter: {fileID: 1536983525}
   PeopleCounter: {fileID: 1431766476}
   SickPeopleCounter: {fileID: 413361990}
   HungryPeopleCounter: {fileID: 1008078613}
+  HappyPeopleCounter: {fileID: 0}
   FoodCounter: {fileID: 178546266}
   RawFoodCounter: {fileID: 527864744}
   MaterialsCounter: {fileID: 649282186}
@@ -9991,7 +9993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -542, y: -0.033447}
+  m_AnchoredPosition: {x: -542, y: -0.033447266}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1553862567
@@ -12042,10 +12044,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf37edc364e3f743a8113f1a358d420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameEndPanelPrefab: {fileID: 776782541974335729, guid: 25af640b340ed4f42a55d74b891bfaad, type: 3}
   DayCounter: {fileID: 2028227764}
   PeopleCounter: {fileID: 1431766476}
   SickPeopleCounter: {fileID: 413361990}
   HungryPeopleCounter: {fileID: 1008078613}
+  HappyPeopleCounter: {fileID: 1963857154}
   FoodCounter: {fileID: 178546266}
   RawFoodCounter: {fileID: 527864744}
   MaterialsCounter: {fileID: 649282186}

@@ -19,11 +19,13 @@ public class Room : MonoBehaviour
     
     public virtual void OnRoomDestroyed() {}
 
-    public void OnTheEndOfDay() 
+    public virtual void OnTheEndOfDay() 
     {
         if (IsActive)
             RoomWork();
     }
+
+    public virtual void OnTheStartOfDay() { }
 
     protected virtual void RoomWork() { }
     

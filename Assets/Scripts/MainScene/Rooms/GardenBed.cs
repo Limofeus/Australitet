@@ -21,7 +21,10 @@ public class GardenBed : ActivatedRoom
 
     protected override void ClearPeople()
     {
+        if (IsActive)
+            Totalres.people.Available += WorkerCount;
         IsActive = false;
+        gardenRoomPanelUI.Init();
     }
 
     public void OnSliderChanged(int sliderCondition)
