@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EmptyRoom : Room
 {
-    private int _peopleForBuildRoom = 2;
+    private int _peopleForBuildRoom = 3;
 
     public Transform roomTypeSelectAnchor;
     public Transform roomTypeSelectRoomAnchor;
@@ -41,8 +41,9 @@ public class EmptyRoom : Room
     }
     public void SelectRoom(int roomId)
     {
-        if (Totalres.people.TrySetTimeout(_peopleForBuildRoom))
+        if (Totalres.people.TrySetTimeout(_peopleForBuildRoom) && Totalres.metal.CurrentValue >= 10f)
         {
+            Totalres.metal.CurrentValue -= 10;
             PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectAnchor);
             PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectRoomAnchor);
             GameObject newRoom = Instantiate(roomPrefabs[roomId], transform.position, Quaternion.identity);

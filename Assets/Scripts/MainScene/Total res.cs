@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class Totalres
 {
-    public static People people = new (80, 0, 0, 60);
+    public static People people = new (25, 0, 0, 25);
 
     public static Resourse food = new (100);
     public static Resourse rawFood = new (100);
@@ -18,7 +18,7 @@ public static class Totalres
         if (flaw < 0)
             flaw = 0;
         food.CurrentValue -= people.Max;
-        people.Hungry += flaw;
+        people.Hungry = flaw;
     }
 
     public static void Sick()
@@ -84,5 +84,15 @@ public static class Totalres
     public static float GetHappyPeopleFraction()
     {
         return (float)people.Happy / people.Max;
+    }
+
+    public static void Reset()
+    {
+        reviewedPeopleCount = 0;
+        weekCount = 0;
+        people = new(25, 0, 0, 25);
+        food = new(100);
+        rawFood = new(100);
+        metal = new(100);
     }
 }

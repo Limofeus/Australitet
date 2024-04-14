@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Kitchen : ActivatedRoom
 {
+
     private int foodPerDay = 3;
     private int rawFoodPerDay = 5;
     private KitchenRoomPanelUI kitchenRoomPanelUI;
