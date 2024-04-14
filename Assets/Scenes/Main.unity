@@ -3244,6 +3244,8 @@ MonoBehaviour:
   eventIcons:
   - {fileID: 21300000, guid: 798d7d516c3fbd7449634af7b2ec6209, type: 3}
   - {fileID: 21300000, guid: facf3768bef556a46a6ad9aba0d58520, type: 3}
+  - {fileID: 21300000, guid: 2c8b3d63f795b464aa2403628eadd938, type: 3}
+  - {fileID: 21300000, guid: 2d1e43575309d114a83a03c2dabf6b4e, type: 3}
   testCastEvent: 0
   testCastBigEvent: 0
   testCastSmallEvent: 0
