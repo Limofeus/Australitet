@@ -69,9 +69,9 @@ public class GenericSmallEvent : SmallEvent
         }
         Totalres.people.Max += resAddClass.maxPeople;
         Totalres.people.Available += resAddClass.maxPeople;
-        Totalres.people.Happy += Mathf.FloorToInt(resAddClass.happinessPercent * Totalres.people.Max);
-        Totalres.people.Hungry += Mathf.FloorToInt(resAddClass.hungryPercent * Totalres.people.Max);
-        Totalres.people.Sick += Mathf.FloorToInt(resAddClass.sickPercent * Totalres.people.Max);
+        Totalres.people.Happy += Mathf.Max(Mathf.FloorToInt(resAddClass.happinessPercent * Totalres.people.Max), 1);
+        Totalres.people.Hungry += Mathf.Max(Mathf.FloorToInt(resAddClass.hungryPercent * Totalres.people.Max), 1);
+        Totalres.people.Sick += Mathf.Max(Mathf.FloorToInt(resAddClass.sickPercent * Totalres.people.Max), 1);
     }
 
     public GenericSmallEvent(string eventName, string eventDescription, GenericEventResourseClass resTestClass, GenericEventResourseClass resAddClass, bool oneTimeEvent, bool memes = false)

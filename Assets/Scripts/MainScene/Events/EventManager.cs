@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
     {      
         new GenericSmallEvent("День Кенгуру", "Выжившие празднуют день кенгуру, часть свободных людей развлекаются", new (availablePeople:2, happinessPercent:-0.9f,sickPercent:0.1f), new(availablePeople:-2, happinessPercent:0.1f,sickPercent:0.1f), false, true),
         new GenericSmallEvent("Повар отжигает", "Повар.. сам не свой, всё", new (hungryPercent:-0.9f), new(hungryPercent: 0.15f), false, true),
-        new GenericSmallEvent("Кашель", "Похоже, что часть людей болеет", new (sickPercent: 0.5f), new(), false, true),
+        new GenericSmallEvent("Кашель", "Похоже, что часть людей болеет", new (sickPercent: 0.5f), new(), false),
         new GenericSmallEvent("Жвачка Джоржа", "Джорж уронил жвачку, а Боб её съел.. из о рта в рот (через пол) получается микроб", new (), new(sickPercent: 0.05f), false, true),
         new GenericSmallEvent("Охота с бумерангом", "Стивен пошёл на охоту с бумерангом, у него получилось убить пару грибных косуль, но ему пришлось пожертвовать собой (стоило использовать лук)", new (maxPeople:1), new(maxPeople:-1, sickPercent: 0.05f), true, true),
         new GenericSmallEvent("БУНТ!", "Бунтари собрались.. капут", new (happinessPercent: -0.2f), new(availablePeople:-4), false, true),
@@ -33,6 +33,14 @@ public class EventManager : MonoBehaviour
         new GenericSmallEvent("Свадьба Короля!", "Король нашёл себе избранницу и приглашает всё королевство на грибной пир", new(food: 30), new(food: -30, happinessPercent: 0.25f), true),
         new GenericSmallEvent("Я и моя тень", "Счастливое рождение двойни. Муж Лары безумно рад!", new(), new(maxPeople: 2), true),
         new GenericSmallEvent("Дракон!", "Во время расширения подземного королевства были обнаружены останки динозавров. Поселенцы напуганы!", new(happinessPercent: 0.7f), new(happinessPercent: -0.1f), true),
+        new GenericSmallEvent("Мышиный король", "Мыши прорвались к грибам и часть запасов бесследно пропала", new(rawfood: 15), new(rawfood: -15), true),
+        new GenericSmallEvent("Мастер на все руки", "Сын лекаря решил помочь отцу в работе и начал изготавливать врачебные приспособления", new(sickPercent: 0.5f), new(metal: -10, sickPercent: -0.08f, availablePeople:-1, happinessPercent: 0.05f), true),
+        new GenericSmallEvent("Продовольственный просчёт", "При перепроверке запасов оказалось что поселяне допустили ошибки при подсчёте продуктов", new(rawfood: 5), new(rawfood: -5, happinessPercent: -0.03f), false),
+        new GenericSmallEvent("ФУ! ПЛЕСЕНЬ!", "Часть запасов готовой еды была уничтожена", new(food: 10), new(food: -10, happinessPercent: -0.03f), false),
+        new GenericSmallEvent("Проблемы со сном", "Жителям ночью не давало спать завывание ветра", new(), new(happinessPercent: -0.05f), false),
+        new GenericSmallEvent("День Рождения", "У нескольких жителей День Рождения! Они приглашают всё королевство на обед", new(food: 10), new(rawfood: -5, happinessPercent: 0.05f), true),
+        new GenericSmallEvent("Грибное разнообразие", "Повара экспериментируют с грибными блюдами, чтобы еда не начала приедаться", new(rawfood: 10), new(rawfood: -10, food: 4, happinessPercent: 0.04f), false),
+        new GenericSmallEvent("Самый обычный день", "Ничего плохого не случилось-уже хорошо", new(), new(happinessPercent: 0.02f), false),
     };
 
     public bool testCastEvent;

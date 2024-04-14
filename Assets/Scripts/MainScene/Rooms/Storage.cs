@@ -7,8 +7,8 @@ public class Storage : Room
     public override void OnRoomCreated()
     {
         base.OnRoomCreated();
-        Totalres.metal.MaxValue += 50;
-        Totalres.food.MaxValue += 50;
-        Totalres.rawFood.MaxValue += 50;
+        Totalres.metal.MaxValue += 25;
+        Totalres.food.MaxValue += 25;
+        Totalres.rawFood.MaxValue += 25;
     }
 }

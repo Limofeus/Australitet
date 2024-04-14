@@ -21,6 +21,14 @@ public static class Totalres
         people.Hungry = flaw;
     }
 
+    public static void BadDay()
+    {
+        var randomSmallValue = Random.Range(-5, 3);
+        if (randomSmallValue < 0)
+            randomSmallValue = 0;
+        people.Happy -= randomSmallValue;
+    }
+
     public static void Sick()
     {
         var randomSmallValue = Random.Range(-5, 5);

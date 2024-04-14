@@ -41,7 +41,7 @@ public class EmptyRoom : Room
     }
     public void SelectRoom(int roomId)
     {
-        if (Totalres.people.TrySetTimeout(_peopleForBuildRoom) && Totalres.metal.CurrentValue >= 10f)
+        if (Totalres.metal.CurrentValue >= 10f && Totalres.people.TrySetTimeout(_peopleForBuildRoom))
         {
             Totalres.metal.CurrentValue -= 10;
             PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectAnchor);
