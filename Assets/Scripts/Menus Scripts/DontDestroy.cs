@@ -17,8 +17,13 @@ public class DontDestroy : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        if(!instance.GetComponent<AudioSource>().isPlaying)
+
+        if (!instance.GetComponent<AudioSource>().isPlaying)
+        {
+            instance.GetComponent<AudioSource>().volume = Mathf.Pow(10f, PlayerPrefs.GetFloat("MusicVol", 1f) / 20f);
             instance.GetComponent<AudioSource>().Play();
+        }
+            
     }
 
     public void MuteMusic()

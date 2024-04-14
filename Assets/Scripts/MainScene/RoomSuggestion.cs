@@ -13,11 +13,14 @@ public class RoomSuggestion : MonoBehaviour
     private ResourcePlace linkedResourcePlace;
 
     public AudioClip[] miningAudio;
+    
+    private float soundVolume;
     public void Init(bool bottomAvailable, Vector2Int sugCoords, BuildGrid curBuildGrid, ResourcePlace resourcePlace = null)
     {
         linkedResourcePlace = resourcePlace;
         coords = sugCoords;
         buildGrid = curBuildGrid;
+        soundVolume = Mathf.Pow(10f, PlayerPrefs.GetFloat("AmbientVol", 1f) / 20f);
         if(linkedResourcePlace == null)
         {
             CreatePanel(bottomAvailable);
@@ -61,12 +64,12 @@ public class RoomSuggestion : MonoBehaviour
     }
     public void BuildRoom(bool isVertical)
     {
-        AudioSource.PlayClipAtPoint(miningAudio[Random.Range(0, miningAudio.Length)], transform.position);
+        AudioSource.PlayClipAtPoint(miningAudio[Random.Range(0, miningAudio.Length)], transform.position, soundVolume);
         buildGrid.TryBuildRoom(coords, isVertical);
     }
     public void BuildResourceRoom()
     {
-        AudioSource.PlayClipAtPoint(miningAudio[Random.Range(0, miningAudio.Length)], transform.position, 20f);
+        AudioSource.PlayClipAtPoint(miningAudio[Random.Range(0, miningAudio.Length)], transform.position, soundVolume);
         buildGrid.CreateRoom(coords, 3);
 
     }
