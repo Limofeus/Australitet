@@ -18,7 +18,7 @@ public class Hospital : ActivatedRoom
     {
         var curePeople = Mathf.Min(peopleInHospital, Totalres.people.Sick);
         Totalres.people.Sick -= curePeople;
-        Totalres.reviewedPeopleCount = HospitalCapacity;
+        Totalres.reviewedPeopleCount += HospitalCapacity;
     }
 
     public void OnSliderValueChanged(int value)
@@ -47,12 +47,15 @@ public class Hospital : ActivatedRoom
             }
         }
         peopleInHospital = value;
-        IsActive = peopleInHospital > 0 ? true : false;
+        IsActive = peopleInHospital > 0;
     }
 
     protected override void ClearPeople()
     {
+        if (IsActive)
+            Totalres.people.Available += peopleInHospital + WorkerForCure;
         peopleInHospital = 0;
+        IsActive = false;
         hospitalRoomPanelUI.Init();
     }
 }

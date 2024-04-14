@@ -17,8 +17,8 @@ public class Recreation : ActivatedRoom
 
     protected override void RoomWork()
     {
-        var sadPeople = Mathf.Min(peopleInRoom, Totalres.people.Max - Totalres.people.Happy);
-        Totalres.people.Happy += sadPeople;
+        var sadPeopleInRoom = Mathf.Min(peopleInRoom, Totalres.people.Max - Totalres.people.Happy);
+        Totalres.people.Happy += sadPeopleInRoom;
     }
 
     public void OnSliderValueChanged(int value)
@@ -51,6 +51,8 @@ public class Recreation : ActivatedRoom
 
     protected override void ClearPeople()
     {
+        if (IsActive)
+            Totalres.people.Available += peopleInRoom;
         peopleInRoom = 0;
         recreationRoomPanelUI.Init();
     }

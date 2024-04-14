@@ -25,16 +25,14 @@ public class MineRoom : ActivatedRoom
 
     protected override void ClearPeople()
     {
+        if (IsActive)
+            Totalres.people.Available += WorkerCount;
         IsActive = false;
     }
 
     protected override void RoomWork()
     {
-        var hasEnoughSpace = Totalres.food.CurrentValue + metalPerDay <= Totalres.food.MaxValue;
-        if (hasEnoughSpace)
-        {
-            Totalres.food.CurrentValue += metalPerDay;
-        }
+        Totalres.metal.CurrentValue += metalPerDay;
     }
 
     public void OnCheckBoxChanged(bool isOn)
