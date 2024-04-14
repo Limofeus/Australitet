@@ -53,7 +53,7 @@ public class PlayerParams : MonoBehaviour
 
     private void AddText()
     {
-        DayCounter.text = "Day " + _dayNum;
+        DayCounter.text = "Δενό " + _dayNum;
         PeopleCounter.text = Totalres.people?.Available + " / " + Totalres.people?.Max;
         FoodCounter.text = Totalres.food?.CurrentValue + " / " + Totalres.food?.MaxValue;
         RawFoodCounter.text = Totalres.rawFood?.CurrentValue + " / " + Totalres.rawFood?.MaxValue;

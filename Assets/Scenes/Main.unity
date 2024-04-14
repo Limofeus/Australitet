@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
+  m_AnchoredPosition: {x: -342, y: 0}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &102011441
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 178546267}
   - component: {fileID: 178546266}
   m_Layer: 5
-  m_Name: PeopleText
+  m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,7 +915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 0}
+  m_AnchoredPosition: {x: 402, y: 0}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &250799989
@@ -1022,7 +1022,6 @@ RectTransform:
   m_Children:
   - {fileID: 133698260}
   - {fileID: 1787733844}
-  - {fileID: 656834478}
   - {fileID: 704428946}
   - {fileID: 1513485215}
   - {fileID: 1142923661}
@@ -1255,7 +1254,7 @@ GameObject:
   - component: {fileID: 413361991}
   - component: {fileID: 413361990}
   m_Layer: 5
-  m_Name: PeopleText
+  m_Name: Sick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1688,7 @@ GameObject:
   - component: {fileID: 527864745}
   - component: {fileID: 527864744}
   m_Layer: 5
-  m_Name: PeopleText
+  m_Name: RawFood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2004,7 +2003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5343e620bb1eb5c4fbf37f98ea864040, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c66ea916cfd2fc43b1f1628e3eeaabd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2290,7 +2289,7 @@ GameObject:
   - component: {fileID: 649282187}
   - component: {fileID: 649282186}
   m_Layer: 5
-  m_Name: PeopleText
+  m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2439,17 +2438,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656834477}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 252858314}
+  m_Father: {fileID: 704428946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 110, y: 110}
+  m_AnchoredPosition: {x: -20.3, y: 0.000061035}
+  m_SizeDelta: {x: 75.0658, y: 75.067}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &656834479
 MonoBehaviour:
@@ -2475,10 +2474,10 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0.7975035, b: 0, a: 1}
     m_PressedColor: {r: 1, g: 0.6628759, b: 0.2320754, a: 0.41960785}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.3
+    m_FadeDuration: 0.2
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -2558,7 +2557,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingsPanel: {fileID: 4793493522240414831, guid: db10c2b4745249844a51df83f744c243, type: 3}
-  UserUI: {fileID: 1787733843}
   isClose: 1
 --- !u!1 &669578947
 GameObject:
@@ -2725,6 +2723,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 656834478}
   - {fileID: 953820038}
   - {fileID: 1776079046}
   - {fileID: 250799988}
@@ -3522,7 +3521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 665e3678601273f45a7f9a1d9a09f8b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4bdd6e9083725943a79d0ae40c3685d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3552,7 +3551,7 @@ GameObject:
   - component: {fileID: 1008078614}
   - component: {fileID: 1008078613}
   m_Layer: 5
-  m_Name: PeopleText
+  m_Name: Hungry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3821,12 +3820,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DayCounter: {fileID: 1536983525}
-  PeopleCounter: {fileID: 459325087}
-  SickPeopleCounter: {fileID: 2056065039}
-  HungryPeopleCounter: {fileID: 1095755371}
-  FoodCounter: {fileID: 117248585}
-  RawFoodCounter: {fileID: 1872378457}
-  MaterialsCounter: {fileID: 669578949}
+  PeopleCounter: {fileID: 1431766476}
+  SickPeopleCounter: {fileID: 413361990}
+  HungryPeopleCounter: {fileID: 1008078613}
+  FoodCounter: {fileID: 178546266}
+  RawFoodCounter: {fileID: 527864744}
+  MaterialsCounter: {fileID: 649282186}
 --- !u!1 &1043366776
 GameObject:
   m_ObjectHideFlags: 0
@@ -9737,7 +9736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -142, y: 0}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1512672161
@@ -9992,7 +9991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: 0}
+  m_AnchoredPosition: {x: -542, y: -0.033447}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1553862567
@@ -10377,7 +10376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: 0}
+  m_AnchoredPosition: {x: 582, y: 0}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1743431571
@@ -10549,7 +10548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchoredPosition: {x: 222, y: 0}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1776079047
@@ -11161,7 +11160,7 @@ GameObject:
   - component: {fileID: 1963857155}
   - component: {fileID: 1963857154}
   m_Layer: 5
-  m_Name: PeopleText
+  m_Name: Happy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11527,7 +11526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 665e3678601273f45a7f9a1d9a09f8b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1a9e2e40d9b5744188bcc2dc52016e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11557,7 +11556,7 @@ GameObject:
   - component: {fileID: 2028227765}
   - component: {fileID: 2028227764}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11579,7 +11578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028227764
@@ -11910,6 +11909,7 @@ GameObject:
   - component: {fileID: 2123634786}
   - component: {fileID: 2123634785}
   - component: {fileID: 2123634784}
+  - component: {fileID: 2123634787}
   m_Layer: 5
   m_Name: NextDayButton
   m_TagString: Untagged
@@ -11979,7 +11979,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2123634785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2123634787}
+        m_TargetAssemblyTypeName: PlayerParams, Assembly-CSharp
+        m_MethodName: OnNewDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2123634785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12018,6 +12030,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123634782}
   m_CullTransparentMesh: 1
+--- !u!114 &2123634787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123634782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf37edc364e3f743a8113f1a358d420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayCounter: {fileID: 2028227764}
+  PeopleCounter: {fileID: 1431766476}
+  SickPeopleCounter: {fileID: 413361990}
+  HungryPeopleCounter: {fileID: 1008078613}
+  FoodCounter: {fileID: 178546266}
+  RawFoodCounter: {fileID: 527864744}
+  MaterialsCounter: {fileID: 649282186}
 --- !u!1 &2147135805
 GameObject:
   m_ObjectHideFlags: 0
