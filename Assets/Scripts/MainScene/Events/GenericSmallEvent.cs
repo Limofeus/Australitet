@@ -47,6 +47,15 @@ public class GenericSmallEvent : SmallEvent
         if (resTestClass.hungryPercent > 0 && (Totalres.people.Hungry / Totalres.people.Max) < resTestClass.hungryPercent) isPossible = false;
         if (resTestClass.sickPercent < 0 && (Totalres.people.Sick / Totalres.people.Max) > -(resTestClass.sickPercent)) isPossible = false;
         if (resTestClass.sickPercent > 0 && (Totalres.people.Sick / Totalres.people.Max) < resTestClass.sickPercent) isPossible = false;
+
+        if (resTestClass.food > 0 && (resTestClass.food > Totalres.food.CurrentValue)) isPossible = false;
+        if (resTestClass.rawfood > 0 && (resTestClass.rawfood > Totalres.rawFood.CurrentValue)) isPossible = false;
+        if (resTestClass.metal > 0 && (resTestClass.metal > Totalres.metal.CurrentValue)) isPossible = false;
+
+        if (resTestClass.food < 0 && (-resTestClass.food < Totalres.food.CurrentValue)) isPossible = false;
+        if (resTestClass.rawfood < 0 && (-resTestClass.rawfood < Totalres.rawFood.CurrentValue)) isPossible = false;
+        if (resTestClass.metal < 0 && (-resTestClass.metal < Totalres.metal.CurrentValue)) isPossible = false;
+
         if (!memess)
         {
             if (memes)
@@ -71,7 +80,10 @@ public class GenericSmallEvent : SmallEvent
         Totalres.people.Available += resAddClass.maxPeople;
         Totalres.people.Happy += Mathf.Max(Mathf.FloorToInt(resAddClass.happinessPercent * Totalres.people.Max), 1);
         Totalres.people.Hungry += Mathf.Max(Mathf.FloorToInt(resAddClass.hungryPercent * Totalres.people.Max), 1);
-        Totalres.people.Sick += Mathf.Max(Mathf.FloorToInt(resAddClass.sickPercent * Totalres.people.Max), 1);
+        Totalres.people.Sick += Mathf.Max(Mathf.FloorToInt(resAddClass.sickPercent * Totalres.people.Max),1);
+        Totalres.food.CurrentValue += resAddClass.food;
+        Totalres.rawFood.CurrentValue += resAddClass.rawfood;
+        Totalres.metal.CurrentValue += resAddClass.metal;
     }
 
     public GenericSmallEvent(string eventName, string eventDescription, GenericEventResourseClass resTestClass, GenericEventResourseClass resAddClass, bool oneTimeEvent, bool memes = false)

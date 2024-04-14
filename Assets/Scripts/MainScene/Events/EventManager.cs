@@ -11,9 +11,7 @@ public class EventManager : MonoBehaviour
 
     public Sprite[] eventIcons;
     public BigEvent[] bigEvents = new BigEvent[] 
-    
     { 
-        new BigTestEvent("АВСТРАЛИЙСКАЯ ЧУМА", -1),
         new NewPeopleBigEvent("Люди на поверхности", "До нас добралась группа людей из соседнего поселения, они просят убежища, однако еды на всех может не хватить", 1, "Впустить", "Не пускать"),
     };
 
@@ -25,7 +23,7 @@ public class EventManager : MonoBehaviour
         new GenericSmallEvent("Жвачка Джоржа", "Джорж уронил жвачку, а Боб её съел.. из о рта в рот (через пол) получается микроб", new (), new(sickPercent: 0.05f), false, true),
         new GenericSmallEvent("Охота с бумерангом", "Стивен пошёл на охоту с бумерангом, у него получилось убить пару грибных косуль, но ему пришлось пожертвовать собой (стоило использовать лук)", new (maxPeople:1), new(maxPeople:-1, sickPercent: 0.05f), true, true),
         new GenericSmallEvent("БУНТ!", "Бунтари собрались.. капут", new (happinessPercent: -0.2f), new(availablePeople:-4), false, true),
-        new GenericSmallEvent("На 3 метра ниже", "Селяни решили похоронить собаку, которую они нашли под землёй, копая проход", new (happinessPercent: 0.3f), new(availablePeople:2), false, true),
+        new GenericSmallEvent("На 3 метра ниже", "Селяне решили похоронить собаку, которую они нашли под землёй, копая проход", new (happinessPercent: 0.3f), new(availablePeople:2), false),
         new GenericSmallEvent("Новые селяне!", "Вам посчастливилось найти новых людей для своей колонии, но они оказались трупами :( ...ничего не изменилось...", new (), new(), true, true),
         new GenericSmallEvent("Во имя отечества: гимн", "Группа жителей решила создать гимн нашего королевства", new(happinessPercent: 0.2f), new(availablePeople: -3, happinessPercent: 0.05f), true),
         new GenericSmallEvent("Во имя отечества: флаг", "Группа жителей решила создать флаг нашего королевства", new(happinessPercent: 0.2f), new(availablePeople: -3, happinessPercent: 0.05f), true),
@@ -40,6 +38,14 @@ public class EventManager : MonoBehaviour
         new GenericSmallEvent("Проблемы со сном", "Жителям ночью не давало спать завывание ветра", new(), new(happinessPercent: -0.05f), false),
         new GenericSmallEvent("День Рождения", "У нескольких жителей День Рождения! Они приглашают всё королевство на обед", new(food: 10), new(rawfood: -5, happinessPercent: 0.05f), true),
         new GenericSmallEvent("Грибное разнообразие", "Повара экспериментируют с грибными блюдами, чтобы еда не начала приедаться", new(rawfood: 10), new(rawfood: -10, food: 4, happinessPercent: 0.04f), false),
+        new GenericSmallEvent("Борец с режимом", "Джон возомнил что можно воровать у короля и поплатился за это!", new(food:3, metal:2, maxPeople:1), new(food:-3, metal:-2, maxPeople:-1), true),
+        new GenericSmallEvent("Бедный Уилл", "У Уилла несварение желудка-лучше ему пока посидеть на диете.", new(), new(food:3, sickPercent: 0.05f), true),
+        new GenericSmallEvent("Ударник производства", "Инициативный гражданин решил работать в шахте по ночам, чтобы помочь поселению с металлом", new(metal: -10), new(metal: 5, availablePeople: -1), false),
+        new GenericSmallEvent("Что будет с нами?", "Люди переживают о своём будущем", new(), new(happinessPercent: -0.05f), false),
+        new GenericSmallEvent("Джин Билли", "Билли решил угостить своих друзей самодельным алкоголем, все были счастливы, но наутро все трое на работу не вышли", new(availablePeople:3), new(availablePeople: -3,happinessPercent: 0.1f), true),
+        new GenericSmallEvent("Восславь, солнце!", "Среди поселенцев ходят 3 сказания о тёмных душах, обитающих в глубинах подземелий", new(), new(happinessPercent: -0.03f), false),
+        new GenericSmallEvent("Модернизация!", "Проведена реконструкция лестницы", new(metal: 10), new(metal: -10), false),
+        new GenericSmallEvent("Пожар на кухне!", "Грибы превратились в угольки", new(rawfood:15), new(rawfood: 15), false),
         new GenericSmallEvent("Самый обычный день", "Ничего плохого не случилось-уже хорошо", new(), new(happinessPercent: 0.02f), false),
     };
 

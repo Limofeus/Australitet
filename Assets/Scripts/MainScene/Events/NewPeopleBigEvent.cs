@@ -23,7 +23,6 @@ public class NewPeopleBigEvent : BigEvent
     public override bool IsPossible()
     {
         if (happened) return false;
-        //!!! ÏĞÎÂÅĞÈÒÜ ×ÒÎ ÏĞÎØËÎ 10 ÄÍÅÉ
         if(Totalres.weekCount >= 10)
         {
             return true;

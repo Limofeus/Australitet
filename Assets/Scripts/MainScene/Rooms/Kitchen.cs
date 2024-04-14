@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class Kitchen : ActivatedRoom
 {
-
-    private int foodPerDay = 4;
-    private int rawFoodPerDay = 6;
+    private int foodPerDay = 7;
+    private int rawFoodPerDay = 9;
     private KitchenRoomPanelUI kitchenRoomPanelUI;
 
     public int WorkerCount = 2;
@@ -26,17 +25,9 @@ public class Kitchen : ActivatedRoom
 
     protected override void RoomWork()
     {
-        var hasEnoughRawFood = Totalres.rawFood.CurrentValue >= rawFoodPerDay;
-        if (hasEnoughRawFood)
-        {
-            Totalres.food.CurrentValue += foodPerDay;
-            Totalres.rawFood.CurrentValue -= rawFoodPerDay;
-        }
-        else
-        {
-            Totalres.food.CurrentValue += (int)(foodPerDay * (float)(Totalres.rawFood.CurrentValue/ rawFoodPerDay));
-            Totalres.rawFood.CurrentValue = 0;
-        }
+        var food = (int)(foodPerDay * (float)(Mathf.Min(Totalres.rawFood.CurrentValue, rawFoodPerDay) / rawFoodPerDay));
+        Totalres.food.CurrentValue += food;
+        Totalres.rawFood.CurrentValue -= food;
     }
 
     public void OnCheckBoxChanged(bool isOn)

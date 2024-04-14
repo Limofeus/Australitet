@@ -80,15 +80,15 @@ public class PlayerParams : MonoBehaviour
 
         EventManager.Singleton.CastRandEvent();
 
+
+        Totalres.BadDay();
+
+        Totalres.Eat();
         foreach (var room in BuildGrid.Singleton.rooms)
         {
             var activeRoom = room as ActivatedRoom;
             activeRoom?.OnTheEndOfDay();
         }
-
-        Totalres.BadDay();
-
-        Totalres.Eat();
         Totalres.KillHungryPeople();
 
         ChechEndGame();
@@ -165,7 +165,7 @@ $" В конце концов, поселение вымерло.");
 $"Вы смогли продержаться год, но температура на поверхности сделала ее необитаемой." +
 $" Имеющихся у вас ресурсов не хватало на всех, и число людей, умерших от голода, с каждым днем росло." +
 $" Число жителей стало недостаточным для выживания.");
-            else if (Totalres.GetHappyPeopleFraction() > 0.8f)
+            else if (Totalres.GetHappyPeopleFraction() < 0.36f)
                 GameOver("Внезапная смерть",$" Ваше правление не нравилось людям. " +
                     $"Вы нее смогли принимать правильные решения, из-за чего пострадало много людей. " +
                     $"В конце концов, Вы обнаружили яд в своей еде, но было уже поздно.");
