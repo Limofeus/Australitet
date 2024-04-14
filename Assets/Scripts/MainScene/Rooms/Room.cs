@@ -13,6 +13,7 @@ public class Room : MonoBehaviour
     {
         roomCoords = coords;
         OnRoomCreated();
+        PeopleVisualManager.Singleton.UpcheckRooms();
     }
 
     public virtual void OnRoomCreated() {}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class PeopleVisualManager : MonoBehaviour
 {
     public static PeopleVisualManager Singleton;
-    public float startMikrochels;
+    public int targetChelickCount;
     public GameObject mikrochelPref;
     List<Mikrochel> mikrochels = new List<Mikrochel>();
     public List<Vector2Int> roomCoords = new List<Vector2Int>();
@@ -18,7 +19,7 @@ public class PeopleVisualManager : MonoBehaviour
     }
     void Start()
     {
-        for(int i = 0; i < startMikrochels; i++)
+        for(int i = 0; i < targetChelickCount; i++)
         {
             var mikrochelToAdd = Instantiate(mikrochelPref, Vector3.zero, Quaternion.identity).GetComponent<Mikrochel>();
             mikrochelToAdd.UpdateChel();
@@ -26,6 +27,38 @@ public class PeopleVisualManager : MonoBehaviour
         }
     }
 
+    public void SetCheliks()
+    {
+        UpcheckRooms();
+
+        targetChelickCount = Math.Min(roomCoords.Count * 10, Totalres.people.Max);
+
+        if(targetChelickCount < mikrochels.Count)
+        {
+            Mikrochel remMikro = mikrochels[0];
+            mikrochels.Remove(remMikro);
+            Destroy(remMikro.gameObject);
+        }
+        for (int i = 0; i < targetChelickCount; i++)
+        {
+            Mikrochel thisMickrochel;
+            if(i >= mikrochels.Count)
+            {
+                var mikrochelToAdd = Instantiate(mikrochelPref, Vector3.zero, Quaternion.identity).GetComponent<Mikrochel>();
+                mikrochels.Add(mikrochelToAdd);
+                thisMickrochel = mikrochelToAdd;
+            }
+            else
+            {
+                thisMickrochel = mikrochels[i];
+            }
+            if(roomCoords.Count > 0)
+            {
+                thisMickrochel.coords = roomCoords[UnityEngine.Random.Range(0, roomCoords.Count)];
+            }
+            thisMickrochel.UpdateChel();
+        }
+    }
     public void UpcheckRooms()
     {
         roomCoords.Clear();
@@ -44,7 +77,7 @@ public class PeopleVisualManager : MonoBehaviour
     {
         if (upcheckRooms)
         {
-            UpcheckRooms();
+            SetCheliks();
             upcheckRooms = false;
         }
     }

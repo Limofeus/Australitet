@@ -42,7 +42,7 @@ public class PlayerParams : MonoBehaviour
 
     public void UpdateDayParams()
     {
-        DayCounter.text = "Неделя " + Totalres.weekCount;
+        DayCounter.text = "Неделя " + (Totalres.weekCount + 1);
         SickPeopleCounter.text = GetSickPeopleString();
         HungryPeopleCounter.text = (int)(Totalres.GetHungryPeopleFraction() * 100) + "%";
         HappyPeopleCounter.text = (int)(Totalres.GetHappyPeopleFraction() * 100) + "%";
@@ -107,6 +107,8 @@ public class PlayerParams : MonoBehaviour
 
         UpdateDayParams();
 
+        PeopleVisualManager.Singleton.SetCheliks();
+
         while (timer < effectTime)
         {
             _blackPanel.color = new Color(0, 0, 0, 1 - timer / effectTime);
@@ -122,6 +124,9 @@ public class PlayerParams : MonoBehaviour
         var timer = 0f;
         _blackPanel.gameObject.SetActive(true);
         _blackPanel.color = new Color(0, 0, 0, 1);
+
+        PeopleVisualManager.Singleton.SetCheliks();
+
         while (timer < effectTime)
         {
             _blackPanel.color = new Color(0, 0, 0, 1 - timer / effectTime);

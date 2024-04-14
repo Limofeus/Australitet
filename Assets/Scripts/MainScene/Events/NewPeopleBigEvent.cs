@@ -24,7 +24,14 @@ public class NewPeopleBigEvent : BigEvent
     {
         if (happened) return false;
         //!!! опнбепхрэ врн опнькн 10 дмеи
-        return true;
+        if(Totalres.weekCount >= 10)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override void OnDayStart()
