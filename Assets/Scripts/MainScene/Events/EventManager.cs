@@ -18,15 +18,21 @@ public class EventManager : MonoBehaviour
     };
 
     public SmallEvent[] smallEvents = new SmallEvent[]
-    {
-        new GenericSmallEvent("День Кенгуру", "Выжившие празднуют день кенгуру, часть свободных людей развлекаются", new (2, 0, -0.9f, 0.1f, 0f), new(-2, 0, 0.1f, 0.1f, 0f), false, true),
-        new GenericSmallEvent("Повар отжигает", "Повар.. сам не свой, всё", new (0, 0, 0f, -0.9f, 0f), new(0, 0, 0f, 0.15f, 0f), false, true),
-        new GenericSmallEvent("Кашель", "Похоже, что часть людей болеет", new (0, 0, 0f, 0f, 0.5f), new(0, 0, 0f, 0f, 0f), false, true),
-        new GenericSmallEvent("Жвачка Джоржа", "Джорж уронил жвачку, а Боб её съел.. из о рта в рот (через пол) получается микроб", new (0, 0, 0f, 0f, 0f), new(0, 0, 0f, 0f, 0.05f), false, true),
-        new GenericSmallEvent("Охота с бумерангом", "Стивен пошёл на охоту с бумерангом, у него получилось убить пару грибных косуль, но ему пришлось пожертвовать собой (стоило использовать лук)", new (0, 1, 0f, 0f, 0f), new(0, -1, 0f, 0f, 0.05f), true, true),
-        new GenericSmallEvent("БУНТ!", "Бунтари собрались.. капут", new (0, 0, -0.2f, 0f, 0f), new(-4, 0, 0f, 0f, 0f), false, true),
-        new GenericSmallEvent("На 3 метра ниже", "Селяни решили похоронить собаку, которую они нашли под землёй, копая проход", new (0, 0, 0.3f, 0f, 0f), new(-2, 0, 0f, 0f, 0f), false, true),
-        new GenericSmallEvent("Новые селяне!", "Вам посчастливилось найти новых людей для своей колонии, но они оказались трупами :( ...ничего не изменилось...", new (0, 0, 0f, 0f, 0f), new(0, 0, 0f, 0f, 0f), true, true),
+    {      
+        new GenericSmallEvent("День Кенгуру", "Выжившие празднуют день кенгуру, часть свободных людей развлекаются", new (availablePeople:2, happinessPercent:-0.9f,sickPercent:0.1f), new(availablePeople:-2, happinessPercent:0.1f,sickPercent:0.1f), false, true),
+        new GenericSmallEvent("Повар отжигает", "Повар.. сам не свой, всё", new (hungryPercent:-0.9f), new(hungryPercent: 0.15f), false, true),
+        new GenericSmallEvent("Кашель", "Похоже, что часть людей болеет", new (sickPercent: 0.5f), new(), false, true),
+        new GenericSmallEvent("Жвачка Джоржа", "Джорж уронил жвачку, а Боб её съел.. из о рта в рот (через пол) получается микроб", new (), new(sickPercent: 0.05f), false, true),
+        new GenericSmallEvent("Охота с бумерангом", "Стивен пошёл на охоту с бумерангом, у него получилось убить пару грибных косуль, но ему пришлось пожертвовать собой (стоило использовать лук)", new (maxPeople:1), new(maxPeople:-1, sickPercent: 0.05f), true, true),
+        new GenericSmallEvent("БУНТ!", "Бунтари собрались.. капут", new (happinessPercent: -0.2f), new(availablePeople:-4), false, true),
+        new GenericSmallEvent("На 3 метра ниже", "Селяни решили похоронить собаку, которую они нашли под землёй, копая проход", new (happinessPercent: 0.3f), new(availablePeople:2), false, true),
+        new GenericSmallEvent("Новые селяне!", "Вам посчастливилось найти новых людей для своей колонии, но они оказались трупами :( ...ничего не изменилось...", new (), new(), true, true),
+        new GenericSmallEvent("Во имя отечества: гимн", "Группа жителей решила создать гимн нашего королевства", new(happinessPercent: 0.2f), new(availablePeople: -3, happinessPercent: 0.05f), true),
+        new GenericSmallEvent("Во имя отечества: флаг", "Группа жителей решила создать флаг нашего королевства", new(happinessPercent: 0.2f), new(availablePeople: -3, happinessPercent: 0.05f), true),
+        new GenericSmallEvent("Во имя отечества: герб", "Группа жителей решила создать герб нашего королевства", new(happinessPercent: 0.2f), new(availablePeople: -3, happinessPercent: 0.05f), true),
+        new GenericSmallEvent("Свадьба Короля!", "Король нашёл себе избранницу и приглашает всё королевство на грибной пир", new(food: 30), new(food: -30, happinessPercent: 0.25f), true),
+        new GenericSmallEvent("Я и моя тень", "Счастливое рождение двойни. Муж Лары безумно рад!", new(), new(maxPeople: 2), true),
+        new GenericSmallEvent("Дракон!", "Во время расширения подземного королевства были обнаружены останки динозавров. Поселенцы напуганы!", new(happinessPercent: 0.7f), new(happinessPercent: -0.1f), true),
     };
 
     public bool testCastEvent;

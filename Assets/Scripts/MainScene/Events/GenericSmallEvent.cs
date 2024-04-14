@@ -10,14 +10,20 @@ public class GenericEventResourseClass
     public float happinessPercent;
     public float hungryPercent;
     public float sickPercent;
+    public int food;
+    public int rawfood;
+    public int metal;
 
-    public GenericEventResourseClass(int availablePeople, int maxPeople, float happinessPercent, float hungryPercent, float sickPercent)
+    public GenericEventResourseClass(int availablePeople = 0, int maxPeople = 0, float happinessPercent = 0, float hungryPercent = 0, float sickPercent = 0, int food = 0, int rawfood = 0, int metal = 0)
     {
         this.availablePeople = availablePeople;
         this.maxPeople = maxPeople;
         this.happinessPercent = happinessPercent;
         this.hungryPercent = hungryPercent;
         this.sickPercent = sickPercent;
+        this.food = food;
+        this.rawfood = rawfood;
+        this.metal = metal;
     }
 }
 
@@ -28,7 +34,7 @@ public class GenericSmallEvent : SmallEvent
     public bool oneTimeEvent = false;
     public bool unplayed = true;
     public bool memes;
-    const bool memess = true;
+    const bool memess = false;
     public override bool IsPossible()
     {
         bool isPossible = true;
@@ -62,6 +68,7 @@ public class GenericSmallEvent : SmallEvent
             Totalres.people.SetTimeout(-resAddClass.availablePeople);
         }
         Totalres.people.Max += resAddClass.maxPeople;
+        Totalres.people.Available += resAddClass.maxPeople;
         Totalres.people.Happy += Mathf.FloorToInt(resAddClass.happinessPercent * Totalres.people.Max);
         Totalres.people.Hungry += Mathf.FloorToInt(resAddClass.hungryPercent * Totalres.people.Max);
         Totalres.people.Sick += Mathf.FloorToInt(resAddClass.sickPercent * Totalres.people.Max);
