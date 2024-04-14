@@ -12,6 +12,7 @@ public class BuildGrid : MonoBehaviour
     public Dictionary<Vector2Int, GameObject> roomSugggestions = new Dictionary<Vector2Int, GameObject>();
     public Dictionary<Vector2Int, ResourcePlace> resourcePlaces = new Dictionary<Vector2Int, ResourcePlace>();
     public GameObject[] roomPrefabs;
+    public AudioClip[] roomAudio;
     public GameObject roomSuggestionPrefab;
 
     private void Awake()
@@ -108,6 +109,7 @@ public class BuildGrid : MonoBehaviour
     {
         Vector2 roomPos = new Vector2(roomCoords.x * cellWidth, roomCoords.y * cellHeight);
         GameObject createdRoom = Instantiate(roomPrefabs[roomType], roomPos, Quaternion.identity);
+        AudioSource.PlayClipAtPoint(roomAudio[roomType], roomPos, MainSceen.CameraMover._currentZoom);
         Room room = createdRoom.GetComponent<Room>();
         room.InitiateRoom(roomCoords);
         rooms.Add(room);

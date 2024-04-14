@@ -343,6 +343,8 @@ MonoBehaviour:
   screenRato: 4
   clampRatio: 0.4
   screenTenth: 0
+  roomSound:
+  - {fileID: 6346645604355585299, guid: a733c5c59ca50ea499a27687e1fa8cb5, type: 3}
   _checkBox: {fileID: 242924524642598554}
   room: {fileID: 0}
 --- !u!1 &3297351388909396036

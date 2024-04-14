@@ -20,7 +20,9 @@ public class RoomSuggestion : MonoBehaviour
         linkedResourcePlace = resourcePlace;
         coords = sugCoords;
         buildGrid = curBuildGrid;
-        soundVolume = Mathf.Pow(10f, PlayerPrefs.GetFloat("AmbientVol", 1f) / 20f);
+        
+        soundVolume = Mathf.Pow(10f, PlayerPrefs.GetFloat("AmbientVol", 1f) / 20f) * MainSceen.CameraMover._currentZoom;
+        
         if(linkedResourcePlace == null)
         {
             CreatePanel(bottomAvailable);

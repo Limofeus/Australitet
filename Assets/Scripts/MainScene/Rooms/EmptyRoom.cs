@@ -15,6 +15,7 @@ public class EmptyRoom : Room
     private RoomTypeSelector roomTypeSelector;
     private RoomTypeSelectionPanel roomTypeSelectionPanel;
     public GameObject[] roomPrefabs;
+    public AudioClip[] roomSounds;
     override public void OnRoomCreated()
     {
         /*
@@ -45,6 +46,7 @@ public class EmptyRoom : Room
             PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectAnchor);
             PanelManager.Singleton.RemoveTrackingPair(roomTypeSelectRoomAnchor);
             GameObject newRoom = Instantiate(roomPrefabs[roomId], transform.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(roomSounds[roomId], transform.position, MainSceen.CameraMover._currentZoom);
             Room roomComp = newRoom.GetComponent<Room>();
             roomComp.InitiateRoom(roomCoords);
             BuildGrid.Singleton.rooms[BuildGrid.Singleton.rooms.IndexOf(this)] = roomComp;
