@@ -11,12 +11,10 @@ public class KrisyBigEvent : BigEvent
         {
             case 0:
                 Totalres.metal.CurrentValue -= 8;
-                Totalres.people.SetTimeout(3);
                 break;
             case 1:
                 //Totalres.people.Sick += Mathf.Max(Mathf.FloorToInt(0.2f * Totalres.people.Max), 1);
                 Totalres.food.CurrentValue -= 20;
-                Totalres.people.SetTimeout(2);
                 break;
         }
     }
@@ -37,6 +35,7 @@ public class KrisyBigEvent : BigEvent
     public override void OnDayStart()
     {
         happened = true;
+        Totalres.people.SetTimeout(3);
     }
 
     public KrisyBigEvent(string name, string desc, int iconId, string butText1, string butText2)

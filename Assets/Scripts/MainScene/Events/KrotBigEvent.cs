@@ -12,11 +12,9 @@ public class KrotBigEvent : BigEvent
         {
             case 0:
                 Totalres.metal.CurrentValue -= 6;
-                Totalres.people.SetTimeout(4);
                 break;
             case 1:
-                Totalres.people.Sick += Mathf.Max(Mathf.FloorToInt(0.2f * Totalres.people.Max), 1);
-                Totalres.people.SetTimeout(7);
+                Totalres.people.Sick += Mathf.Max(Mathf.FloorToInt(0.25f * Totalres.people.Max), 1);
                 break;
         }
     }
@@ -37,6 +35,7 @@ public class KrotBigEvent : BigEvent
     public override void OnDayStart()
     {
         happened = true;
+        Totalres.people.SetTimeout(5);
     }
 
     public KrotBigEvent(string name, string desc, int iconId, string butText1, string butText2)
