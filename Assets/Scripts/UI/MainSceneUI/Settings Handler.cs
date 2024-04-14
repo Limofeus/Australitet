@@ -13,5 +13,6 @@ public class SettingsHandler : MonoBehaviour
     {
         if (isClose) Instance = Instantiate(SettingsPanel);
         else Destroy(Instance);
+        isClose = !isClose;
     }
 }
