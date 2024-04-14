@@ -13,13 +13,8 @@ public class EventManager : MonoBehaviour
     public BigEvent[] bigEvents = new BigEvent[] 
     
     { 
-        new BigTestEvent("B-EV1", -1), 
-        new BigTestEvent("B-EV2", -1), 
-        new BigTestEvent("B-EV3", -1),
-        new BigTestEvent("B-EV4", -1),
-        new BigTestEvent("B-EV5", -1),
-        new BigTestEvent("B-EV6", -1),
-        new BigTestEvent("B-EV7", -1)
+        new BigTestEvent("АВСТРАЛИЙСКАЯ ЧУМА", -1),
+        new NewPeopleBigEvent("Люди на поверхности", "До нас добралась группа людей из соседнего поселения, они просят убежища, однако еды на всех может не хватить", 1, "Впустить", "Не пускать"),
     };
 
     public SmallEvent[] smallEvents = new SmallEvent[]
@@ -72,6 +67,8 @@ public class EventManager : MonoBehaviour
     }
     public void CastRandEvent()
     {
+        EventUiHandler.Singleton.HideEventWindows();
+
         if(eventCounter < 0)
         {
             List<EventType> newEventSeq = new List<EventType>();
@@ -105,6 +102,7 @@ public class EventManager : MonoBehaviour
             BigEvent eventToCast = (BigEvent)eventToCastMightBeNull;
             UpdateAllEventCastTime(bigEvents);
             eventToCast.Cast();
+            EventUiHandler.Singleton.SetBigEvent(eventToCast);
             Debug.Log($"CASTED >{eventToCast.eventName}< EVENT");
         }
     }

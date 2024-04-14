@@ -31,10 +31,9 @@ public class BigTestEvent : BigEvent
     }
     public override void OnDayStart()
     {
-        eventName = "Опции";
         eventDescription = "Вам дали на выбор 2 опции";
-        buttonCount = 2;
-        eventIconId = 21;
+        buttonTexts = new string[] { "НЕТ", "ДАДА" };
+        eventIconId = 0;
     }
 
     public BigTestEvent(string nameE, int tse)

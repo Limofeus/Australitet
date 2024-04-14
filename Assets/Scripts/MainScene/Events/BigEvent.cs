@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class BigEvent : GameEvent
 {
     public int eventIconId;
-    public int buttonCount;
     public int limitTimeSinceCast;
+    public string[] buttonTexts;
 
     public abstract void ButtonPressed(int buttonId);
 
